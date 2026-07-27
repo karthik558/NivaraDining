@@ -1,7 +1,10 @@
 <script setup>
 import { computed, reactive, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { ArrowRight, ChevronDown, Clock3, ConciergeBell, Heart, Mail, MapPin, MessageCircle, Phone, ShieldCheck } from '@lucide/vue'
+import {
+  ArrowRight, ChevronDown, Clock3, ConciergeBell, Heart, Mail, MapPin,
+  MessageCircle, Phone,
+} from '@lucide/vue'
 import ProductCard from '../components/ProductCard.vue'
 import { state } from '../store'
 
@@ -11,6 +14,7 @@ const page = computed(() => route.meta.page)
 const sent = ref(false)
 const faqOpen = ref(0)
 const error = ref('')
+const showPassword = ref(false)
 const contact = reactive({ name: '', email: '', room: '', topic: 'Dining assistance', message: '' })
 const login = reactive({ username: '', password: '' })
 const signIn = () => {
@@ -32,11 +36,11 @@ const signIn = () => {
   </template>
 
   <template v-else-if="page === 'contact'">
-    <section class="relative min-h-[650px] overflow-hidden bg-[#211a20] text-white lg:min-h-[720px]">
+    <section class="relative min-h-162.5 overflow-hidden bg-[#211a20] text-white lg:min-h-180">
       <img class="absolute inset-0 h-full w-full object-cover object-center lg:object-right" src="/assets/img/product/ai/ai-product-23.jpg" alt="Lilac Hotels guest assistance" />
-      <div class="absolute inset-0 bg-gradient-to-r from-[#211a20] via-[#211a20]/90 to-[#211a20]/18"></div>
+      <div class="absolute inset-0 bg-linear-to-r from-[#211a20] via-[#211a20]/90 to-[#211a20]/18"></div>
       <div class="absolute inset-0 bg-[radial-gradient(circle_at_15%_10%,rgba(120,38,113,.7),transparent_38%)]"></div>
-      <div class="page-shell relative flex min-h-[650px] items-center py-16 lg:min-h-[720px]">
+      <div class="page-shell relative flex min-h-162.5 items-center py-16 lg:min-h-180">
         <div class="max-w-3xl">
           <div class="flex items-center gap-3"><span class="h-px w-9 bg-white/35"></span><p class="text-xs font-bold tracking-[.22em] text-white/60 uppercase">Guest assistance</p></div>
           <h1 class="mt-6 text-[clamp(3.7rem,8vw,7.2rem)] leading-[.9] font-semibold tracking-[-.07em]">We’re here<br />for your stay.</h1>
@@ -112,14 +116,40 @@ const signIn = () => {
   </template>
 
   <template v-else-if="page === 'sign-in'">
-    <section class="grid min-h-[72vh] place-items-center bg-[radial-gradient(circle_at_50%_0%,rgba(120,38,113,.13),transparent_42%)] px-4 py-16">
-      <form class="surface w-full max-w-md p-7 shadow-card sm:p-9" @submit.prevent="signIn">
-        <span class="mx-auto grid size-14 place-items-center rounded-full bg-lilac text-white"><ShieldCheck :size="25" /></span><h1 class="mt-5 text-center text-3xl font-semibold">Admin portal</h1><p class="mt-2 text-center text-muted">Secure access to manage the dining experience.</p>
-        <p v-if="error" class="mt-5 rounded-xl bg-red-50 p-4 text-sm text-red-700">{{ error }}</p>
-        <div class="mt-7 grid gap-5"><label class="grid gap-2 text-sm font-semibold">Username<input v-model="login.username" class="field" autocomplete="username" required /></label><label class="grid gap-2 text-sm font-semibold">Password<input v-model="login.password" class="field" type="password" autocomplete="current-password" required /></label></div>
-        <button class="primary-button mt-7 w-full">Sign in <ArrowRight :size="17" /></button>
-        <p class="mt-5 rounded-xl bg-lilac-soft p-3 text-center text-xs text-muted">Demo access: <strong>admin</strong> / <strong>admin</strong></p>
-      </form>
+    <section class="relative overflow-hidden bg-canvas py-10 sm:py-14 lg:py-18">
+      <div class="absolute -top-48 right-0 size-120 rounded-full bg-lilac/7 blur-3xl"></div>
+      <div class="page-shell relative">
+        <div class="mx-auto grid max-w-275 overflow-hidden rounded-lg border border-line bg-white shadow-[0_28px_80px_rgba(41,26,38,.12)] lg:min-h-160 lg:grid-cols-[.9fr_1.1fr]">
+          <div class="relative min-h-60 overflow-hidden bg-ink sm:min-h-80 lg:min-h-full">
+            <img class="absolute inset-0 h-full w-full object-cover" src="/assets/img/product/ai/ai-product-38.jpg" alt="Lilac Hotels dining service" />
+            <div class="absolute inset-0 bg-linear-to-t from-ink/25 to-transparent lg:bg-linear-to-r"></div>
+          </div>
+
+          <form class="flex flex-col justify-center p-6 sm:p-10 lg:p-12" @submit.prevent="signIn">
+            <h1 class="text-3xl font-semibold tracking-[-.035em]">Sign in</h1>
+            <p class="mt-3 max-w-md text-sm leading-6 text-muted">Enter your administrator credentials to continue.</p>
+
+            <p v-if="error" class="mt-5 rounded-lg border border-red-100 bg-red-50 p-4 text-sm text-red-700" role="alert">{{ error }}</p>
+
+            <div class="mt-7 grid gap-5">
+              <label class="grid gap-2 text-sm font-semibold">Username
+                <input v-model="login.username" class="field" autocomplete="username" placeholder="Enter username" required />
+              </label>
+              <label class="grid gap-2 text-sm font-semibold">Password
+                <span class="relative"><input v-model="login.password" class="field pr-18" :type="showPassword ? 'text' : 'password'" autocomplete="current-password" placeholder="Enter password" required /><button class="absolute top-1/2 right-4 -translate-y-1/2 text-xs font-semibold text-lilac hover:text-ink" type="button" :aria-label="showPassword ? 'Hide password' : 'Show password'" @click="showPassword = !showPassword">{{ showPassword ? 'Hide' : 'Show' }}</button></span>
+              </label>
+            </div>
+
+            <button class="primary-button mt-7 w-full">Sign in</button>
+
+            <div class="mt-5 rounded-lg border border-lilac/12 bg-lilac-soft/55 p-4 text-sm">
+              <span><small class="block text-muted">Demo credentials</small><strong>admin</strong> <span class="text-muted">/</span> <strong>admin</strong></span>
+            </div>
+
+            <RouterLink class="mt-6 text-center text-sm font-semibold text-muted hover:text-lilac" to="/">Return to dining website</RouterLink>
+          </form>
+        </div>
+      </div>
     </section>
   </template>
 

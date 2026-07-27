@@ -122,11 +122,11 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="relative min-h-[520px] overflow-hidden bg-[#211a20] text-white lg:min-h-[590px]">
+  <section class="relative min-h-130 overflow-hidden bg-[#211a20] text-white lg:min-h-147.5">
     <img class="absolute inset-0 h-full w-full object-cover object-center lg:object-right" src="/assets/img/product/ai/ai-product-39.jpg" alt="Curated Lilac dining menu" />
-    <div class="absolute inset-0 bg-gradient-to-r from-[#211a20] via-[#211a20]/88 to-[#211a20]/15"></div>
+    <div class="absolute inset-0 bg-linear-to-r from-[#211a20] via-[#211a20]/88 to-[#211a20]/15"></div>
     <div class="absolute inset-0 bg-[radial-gradient(circle_at_15%_10%,rgba(120,38,113,.72),transparent_38%)]"></div>
-    <div class="page-shell relative flex min-h-[520px] items-center py-16 lg:min-h-[590px]">
+    <div class="page-shell relative flex min-h-130 items-center py-16 lg:min-h-147.5">
       <div class="max-w-3xl">
         <div class="flex items-center gap-3"><span class="h-px w-9 bg-white/35"></span><p class="text-xs font-bold tracking-[.22em] text-white/60 uppercase">In-room dining</p></div>
         <h1 class="mt-6 text-[clamp(3.2rem,7vw,6.7rem)] leading-[.9] font-semibold tracking-[-.07em]">A menu for<br />every mood.</h1>

@@ -22,6 +22,7 @@ const heroSlides = [
     image: '/assets/img/product/ai/ai-product-28.jpg',
     dish: 'Vegetable Biryani',
     note: 'Aromatic · Slow cooked',
+    tone: '#d8c6a8',
   },
   {
     eyebrow: 'Rooted in flavour',
@@ -30,6 +31,7 @@ const heroSlides = [
     image: '/assets/img/product/ai/ai-product-38.jpg',
     dish: 'South Indian Thali',
     note: 'Balanced · Generous',
+    tone: '#ccb38c',
   },
   {
     eyebrow: 'A beautiful finish',
@@ -38,6 +40,7 @@ const heroSlides = [
     image: '/assets/img/product/ai/ai-product-45.jpg',
     dish: 'Baked Cheesecake',
     note: 'Silky · Hand finished',
+    tone: '#d9c9ae',
   },
 ]
 
@@ -71,6 +74,10 @@ const trayOptions = {
 }
 
 const currentHero = computed(() => heroSlides[heroIndex.value])
+const heroStyle = computed(() => ({
+  '--hero-tone': currentHero.value.tone,
+  backgroundColor: currentHero.value.tone,
+}))
 const activeCategoryProducts = computed(() => {
   const matches = state.products.filter((product) =>
     product.category?.some((category) => category.type === menuCategory.value),
@@ -102,64 +109,64 @@ onBeforeUnmount(() => window.clearInterval(heroTimer))
 
 <template>
   <section
-    class="hero-stage relative overflow-hidden bg-[#241d23]"
+    class="hero-stage relative overflow-hidden transition-colors duration-500"
+    :style="heroStyle"
     @mouseenter="heroPaused = true"
     @mouseleave="heroPaused = false"
   >
     <div class="hero-glow hero-glow--one"></div>
     <div class="hero-glow hero-glow--two"></div>
     <div class="relative">
-      <div class="relative grid min-h-[520px] overflow-hidden bg-[#241d23] text-white lg:h-[590px] lg:min-h-0 lg:grid-cols-[.9fr_1.1fr]">
-        <div class="relative z-20 flex flex-col justify-end px-6 pt-14 pb-12 sm:px-10 lg:justify-center lg:px-[clamp(3.5rem,7vw,8.5rem)] lg:pt-10 lg:pb-24">
+      <div class="relative grid overflow-hidden text-ink transition-colors duration-500 lg:h-147.5 lg:grid-cols-[.9fr_1.1fr]" :style="heroStyle">
+        <div class="relative z-20 flex flex-col justify-end px-5 pt-8 pb-8 sm:px-8 sm:pt-12 sm:pb-10 lg:justify-center lg:px-[clamp(3.5rem,7vw,8.5rem)] lg:pt-8 lg:pb-23">
           <Transition name="hero-copy" mode="out-in">
             <div :key="currentHero.title">
               <div class="flex items-center gap-3">
-                <span class="h-px w-9 bg-white/40"></span>
-                <p class="text-[11px] font-bold tracking-[.22em] text-white/65 uppercase">{{ currentHero.eyebrow }}</p>
+                <span class="h-px w-9 bg-ink/35"></span>
+                <p class="text-[11px] font-bold tracking-[.22em] text-ink/60 uppercase">{{ currentHero.eyebrow }}</p>
               </div>
               <h1
-                class="mt-6 max-w-2xl leading-[.94] font-semibold tracking-[-.065em]"
-                :class="heroIndex === 0 ? 'text-[clamp(2.5rem,4.35vw,4.45rem)]' : 'text-[clamp(2.8rem,5.4vw,5.2rem)]'"
+                class="mt-4 max-w-2xl text-[clamp(2.45rem,4.35vw,4.45rem)] leading-[.96] font-semibold tracking-[-.06em] sm:mt-5"
               >{{ currentHero.title }}</h1>
-              <p class="mt-6 max-w-xl text-base leading-7 text-white/62 sm:text-lg sm:leading-8">{{ currentHero.copy }}</p>
+              <p class="mt-4 max-w-xl text-sm leading-6 text-ink/65 sm:mt-5 sm:text-lg sm:leading-8">{{ currentHero.copy }}</p>
             </div>
           </Transition>
 
-          <div class="mt-9 flex flex-wrap gap-3">
-            <RouterLink class="inline-flex min-h-13 items-center gap-2 rounded-lg bg-white px-6 font-semibold text-lilac hover:-translate-y-0.5 hover:bg-lilac-soft" :to="{ path: '/product', hash: '#menu-results' }">
+          <div class="mt-6 grid gap-3 min-[430px]:flex min-[430px]:flex-wrap sm:mt-7">
+            <RouterLink class="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-lilac px-6 font-semibold text-white hover:-translate-y-0.5 hover:bg-lilac-dark" :to="{ path: '/product', hash: '#menu-results' }">
               Explore the menu <ArrowRight :size="18" />
             </RouterLink>
-            <button class="inline-flex min-h-13 items-center gap-2 rounded-lg border border-white/18 px-5 font-semibold text-white hover:bg-white/8" @click="heroPaused = !heroPaused">
+            <button class="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg border border-ink/20 bg-white/20 px-5 font-semibold text-ink hover:bg-white/45" @click="heroPaused = !heroPaused">
               <Pause v-if="!heroPaused" :size="17" /><Play v-else :size="17" />
               {{ heroPaused ? 'Play story' : 'Pause story' }}
             </button>
           </div>
 
-          <div class="mt-9 flex items-center gap-4 lg:absolute lg:bottom-8 lg:left-[clamp(3.5rem,7vw,8.5rem)] lg:mt-0">
-            <button class="grid size-11 place-items-center rounded-full border border-white/18 hover:bg-white hover:text-ink" aria-label="Previous story" @click="previousHero"><ArrowLeft :size="18" /></button>
+          <div class="mt-7 flex items-center gap-3 lg:absolute lg:bottom-7 lg:left-[clamp(3.5rem,7vw,8.5rem)] lg:mt-0">
+            <button class="grid size-10 place-items-center rounded-full border border-ink/20 hover:bg-white/60" aria-label="Previous story" @click="previousHero"><ArrowLeft :size="17" /></button>
             <div class="flex gap-2">
               <button
                 v-for="(_, index) in heroSlides"
                 :key="index"
-                class="h-1.5 overflow-hidden rounded-full bg-white/18"
+                class="h-1.5 overflow-hidden rounded-full bg-ink/15"
                 :class="index === heroIndex ? 'w-14' : 'w-6'"
                 :aria-label="`Show story ${index + 1}`"
                 @click="setHero(index)"
               >
-                <span v-if="index === heroIndex" class="hero-progress block h-full rounded-full bg-white"></span>
+                <span v-if="index === heroIndex" class="hero-progress block h-full rounded-full bg-ink"></span>
               </button>
             </div>
-            <button class="grid size-11 place-items-center rounded-full border border-white/18 hover:bg-white hover:text-ink" aria-label="Next story" @click="nextHero"><ArrowRight :size="18" /></button>
+            <button class="grid size-10 place-items-center rounded-full border border-ink/20 hover:bg-white/60" aria-label="Next story" @click="nextHero"><ArrowRight :size="17" /></button>
           </div>
         </div>
 
-        <div class="relative order-first min-h-[280px] overflow-hidden sm:min-h-[320px] lg:order-last lg:min-h-full">
+        <div class="relative order-first aspect-square overflow-hidden sm:aspect-[4/3] lg:order-last lg:aspect-auto lg:min-h-full">
           <Transition name="hero-image" mode="out-in">
             <img :key="currentHero.image" class="absolute inset-0 h-full w-full object-cover" :src="currentHero.image" :alt="currentHero.dish" />
           </Transition>
-          <div class="absolute inset-0 bg-gradient-to-t from-[#241d23] via-transparent to-transparent lg:bg-gradient-to-r lg:from-[#241d23] lg:via-[#241d23]/5 lg:to-transparent"></div>
-          <div class="absolute right-5 bottom-6 left-5 flex min-h-20 items-center gap-4 rounded-lg border border-white/20 bg-white/92 p-4 text-ink shadow-2xl backdrop-blur-xl sm:right-8 sm:left-auto sm:w-72 lg:right-10 lg:bottom-8">
-            <span class="grid size-12 shrink-0 place-items-center rounded-full bg-lilac text-white"><ChefHat :size="21" /></span>
+          <div class="hero-image-blend absolute inset-0"></div>
+          <div class="absolute right-8 bottom-6 hidden w-72 items-center gap-3 rounded-lg border border-white/30 bg-white/88 p-4 text-ink shadow-xl backdrop-blur-xl sm:flex lg:right-10 lg:bottom-8">
+            <span class="grid size-10 shrink-0 place-items-center rounded-full bg-lilac text-white sm:size-12"><ChefHat :size="20" /></span>
             <div class="min-w-0"><strong class="block truncate">{{ currentHero.dish }}</strong><small class="mt-0.5 block text-muted">{{ currentHero.note }}</small></div>
           </div>
           <div class="hero-float hero-float--delay absolute top-7 right-6 hidden border border-white/20 bg-white/88 px-4 py-3 text-ink shadow-xl backdrop-blur-xl sm:block lg:top-12 lg:right-12">
@@ -169,12 +176,12 @@ onBeforeUnmount(() => window.clearInterval(heroTimer))
         </div>
       </div>
 
-      <div class="relative z-30 grid border-t border-white/10 bg-[#1e181d] text-white sm:grid-cols-3">
+      <div class="relative z-30 grid border-t border-white/10 bg-ink text-white sm:grid-cols-3">
         <div v-for="(item, index) in [
           { icon: ChefHat, title: 'Made to order', copy: 'Fresh from the Lilac kitchen' },
           { icon: Clock3, title: 'All-day ease', copy: '7:30 AM–10:30 PM, every day' },
           { icon: ConciergeBell, title: 'Room-side service', copy: 'Delivered with thoughtful care' }
-        ]" :key="item.title" class="flex items-center gap-4 px-6 py-5 sm:justify-center sm:px-5 lg:py-6" :class="{ 'border-t border-white/8 sm:border-t-0 sm:border-l': index }">
+        ]" :key="item.title" class="flex items-center gap-3 px-5 py-4 sm:justify-center sm:px-5 lg:py-5" :class="{ 'border-t border-white/8 sm:border-t-0 sm:border-l': index }">
           <span class="grid size-11 shrink-0 place-items-center rounded-full bg-white/8 text-white"><component :is="item.icon" :size="20" /></span>
           <span><strong class="block">{{ item.title }}</strong><small class="text-white/45">{{ item.copy }}</small></span>
         </div>
@@ -212,9 +219,9 @@ onBeforeUnmount(() => window.clearInterval(heroTimer))
   <section class="pb-14 md:pb-20 lg:pb-24">
     <div class="page-shell">
       <div class="grid gap-5 lg:grid-cols-[1.12fr_.88fr]">
-        <RouterLink to="/product" class="editorial-card group relative min-h-[490px] overflow-hidden rounded-xl bg-ink">
+        <RouterLink to="/product" class="editorial-card group relative min-h-90 overflow-hidden rounded-xl bg-ink sm:min-h-107.5 lg:min-h-122.5">
           <img class="absolute inset-0 h-full w-full object-cover opacity-90 duration-700 group-hover:scale-105" src="/assets/img/product/ai/ai-product-38.jpg" alt="South Indian thali" />
-          <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/5 to-transparent"></div>
+          <div class="absolute inset-0 bg-linear-to-t from-ink via-ink/5 to-transparent"></div>
           <div class="absolute right-0 bottom-0 left-0 p-7 text-white sm:p-10">
             <span class="inline-flex items-center gap-2 rounded-lg bg-white/12 px-3 py-1.5 text-xs font-semibold backdrop-blur">Regional table</span>
             <h2 class="mt-4 text-4xl font-semibold tracking-[-.045em] sm:text-5xl">A generous taste of the South.</h2>
@@ -227,7 +234,7 @@ onBeforeUnmount(() => window.clearInterval(heroTimer))
             { title: 'Finish beautifully.', eyebrow: 'A little indulgence', image: '/assets/img/product/ai/ai-product-44.jpg' }
           ]" :key="feature.title" to="/product" class="editorial-card group relative min-h-58 overflow-hidden rounded-xl bg-ink">
             <img class="absolute inset-0 h-full w-full object-cover opacity-85 duration-700 group-hover:scale-105" :src="feature.image" :alt="feature.title" />
-            <div class="absolute inset-0 bg-gradient-to-r from-ink/85 via-ink/25 to-transparent"></div>
+            <div class="absolute inset-0 bg-linear-to-r from-ink/85 via-ink/25 to-transparent"></div>
             <div class="absolute inset-y-0 left-0 flex max-w-sm flex-col justify-center p-7 text-white"><p class="text-xs font-bold tracking-[.16em] text-white/65 uppercase">{{ feature.eyebrow }}</p><h3 class="mt-3 text-3xl leading-tight font-semibold tracking-[-.03em]">{{ feature.title }}</h3><ArrowRight class="mt-5" :size="19" /></div>
           </RouterLink>
         </div>
@@ -242,9 +249,9 @@ onBeforeUnmount(() => window.clearInterval(heroTimer))
       <div class="grid items-center gap-10 lg:grid-cols-[.88fr_1.12fr] lg:gap-14">
         <div>
           <div class="flex items-center gap-3"><span class="h-px w-9 bg-white/35"></span><p class="text-xs font-bold tracking-[.2em] text-white/65 uppercase">The Lilac table</p></div>
-          <h2 class="mt-5 text-4xl leading-[1.04] font-semibold tracking-[-.05em] md:text-5xl lg:text-[3.5rem]">Comforting food, made with thoughtful details.</h2>
+          <h2 class="mt-5 text-4xl leading-[1.04] font-semibold tracking-tighter md:text-5xl lg:text-[3.5rem]">Comforting food, made with thoughtful details.</h2>
           <p class="mt-6 max-w-lg text-lg leading-8 text-white/68">Every tray is considered as a whole—from flavour and freshness to the moment it arrives at your door.</p>
-          <div class="mt-8 grid max-w-lg grid-cols-2 gap-3">
+          <div class="mt-8 grid max-w-lg grid-cols-1 gap-3 min-[400px]:grid-cols-2">
             <div v-for="detail in [
               { icon: Leaf, label: 'Fresh ingredients' },
               { icon: ChefHat, label: 'Made to order' },
@@ -287,7 +294,7 @@ onBeforeUnmount(() => window.clearInterval(heroTimer))
   <section class="section-space bg-canvas">
     <div class="page-shell">
       <div class="overflow-hidden rounded-xl border border-line bg-white shadow-card lg:grid lg:grid-cols-[.78fr_1.22fr]">
-        <div class="relative min-h-[390px] overflow-hidden bg-[#211a20] p-7 text-white sm:p-10 lg:min-h-[560px] lg:p-12">
+        <div class="relative min-h-97.5 overflow-hidden bg-[#211a20] p-7 text-white sm:p-10 lg:min-h-140 lg:p-12">
           <div class="absolute -top-20 -right-20 size-72 rounded-full border border-white/8"></div>
           <div class="absolute right-10 bottom-10 size-44 overflow-hidden rounded-full border-8 border-white/8">
             <img class="h-full w-full object-cover" src="/assets/img/product/ai/ai-product-38.jpg" alt="Lilac dining experience" />
@@ -297,7 +304,7 @@ onBeforeUnmount(() => window.clearInterval(heroTimer))
           </div>
           <div class="relative max-w-sm">
             <p class="text-xs font-bold tracking-[.2em] text-white/55 uppercase">Guest notes</p>
-            <h2 class="mt-5 text-4xl leading-[1.05] font-semibold tracking-[-.05em] sm:text-5xl">What our guests say</h2>
+            <h2 class="mt-5 text-4xl leading-[1.05] font-semibold tracking-tighter sm:text-5xl">What our guests say</h2>
             <p class="mt-5 leading-7 text-white/58">Stories of warm meals, thoughtful service, and stays that felt a little more personal.</p>
           </div>
           <div class="absolute bottom-8 left-7 flex items-center gap-3 sm:bottom-10 sm:left-10 lg:bottom-12 lg:left-12">
@@ -307,7 +314,7 @@ onBeforeUnmount(() => window.clearInterval(heroTimer))
           </div>
         </div>
 
-        <div class="flex min-h-[500px] items-center p-7 sm:p-10 lg:min-h-[560px] lg:p-14">
+        <div class="flex min-h-125 items-center p-7 sm:p-10 lg:min-h-140 lg:p-14">
           <Transition name="testimonial" mode="out-in">
             <article :key="currentTestimonial.id" class="relative w-full">
               <Quote class="text-lilac/12" :size="56" />
@@ -325,9 +332,9 @@ onBeforeUnmount(() => window.clearInterval(heroTimer))
     </div>
   </section>
 
-  <section class="relative flex min-h-[520px] items-center overflow-hidden bg-[#211a20] text-white lg:h-[590px] lg:min-h-0">
+  <section class="relative flex min-h-130 items-center overflow-hidden bg-[#211a20] text-white lg:h-147.5 lg:min-h-0">
     <img class="absolute inset-0 h-full w-full object-cover" src="/assets/img/product/ai/ai-product-26.jpg" alt="Paneer butter masala prepared by Lilac Hotels" />
-    <div class="absolute inset-0 bg-gradient-to-r from-[#211a20] via-[#211a20]/85 to-[#211a20]/12"></div>
+    <div class="absolute inset-0 bg-linear-to-r from-[#211a20] via-[#211a20]/85 to-[#211a20]/12"></div>
     <div class="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(120,38,113,.7),transparent_35%)]"></div>
     <div class="page-shell relative py-12">
       <div class="max-w-3xl">

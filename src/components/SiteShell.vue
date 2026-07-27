@@ -84,8 +84,8 @@ onBeforeUnmount(() => {
           </form>
 
           <div class="flex items-center justify-end gap-2">
-            <RouterLink class="icon-button hidden sm:grid" to="/sign-in" aria-label="Sign in"><UserRound :size="18" /></RouterLink>
-            <RouterLink class="icon-button hidden xl:grid" to="/wishlist" aria-label="Saved items">
+            <RouterLink class="icon-button hidden rounded-lg! sm:grid" to="/sign-in" aria-label="Sign in"><UserRound :size="18" /></RouterLink>
+            <RouterLink class="icon-button hidden rounded-lg! xl:grid" to="/wishlist" aria-label="Saved items">
               <Heart :size="18" />
               <span v-if="state.wishlist.length" class="absolute -top-1 -right-1 grid size-5 place-items-center rounded-md bg-lilac text-[10px] font-bold text-white">{{ state.wishlist.length }}</span>
             </RouterLink>
@@ -251,7 +251,7 @@ onBeforeUnmount(() => {
     </Transition>
 
     <Transition name="fade">
-      <div v-if="state.toast" class="fixed right-4 bottom-5 z-[60] max-w-sm rounded-xl bg-ink px-5 py-3 text-sm font-medium text-white shadow-xl sm:right-6">{{ state.toast }}</div>
+      <div v-if="state.toast" class="fixed right-4 bottom-5 z-60 max-w-sm rounded-xl bg-ink px-5 py-3 text-sm font-medium text-white shadow-xl sm:right-6">{{ state.toast }}</div>
     </Transition>
   </div>
 </template>
