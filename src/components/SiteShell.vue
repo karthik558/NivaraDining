@@ -69,8 +69,8 @@ onBeforeUnmount(() => {
           <p class="hidden sm:block">In-room dining, thoughtfully prepared</p>
           <div class="flex w-full items-center justify-between gap-3 sm:w-auto sm:justify-end sm:gap-5">
             <span class="flex items-center gap-1.5 whitespace-nowrap"><Clock3 :size="13" /> <span class="sm:hidden">7:30 AM–10:30 PM</span><span class="hidden sm:inline">Daily · 7:30 AM–10:30 PM</span></span>
-            <a class="flex items-center gap-1.5 hover:text-white/80" href="tel:08065551244">
-              <Phone :size="13" /> <span class="whitespace-nowrap">080 6555 1244</span>
+            <a class="flex items-center gap-1.5 hover:text-white/80" href="tel:9999999999">
+              <Phone :size="13" /> <span class="whitespace-nowrap">+91 99999 99999</span>
             </a>
           </div>
         </div>
@@ -153,9 +153,9 @@ onBeforeUnmount(() => {
               <RouterLink class="mobile-nav-shortcut" to="/sign-in"><UserRound :size="19" /><span>Sign in</span></RouterLink>
             </div>
 
-            <a href="tel:08065551244" class="mt-auto flex items-center gap-3 rounded-2xl bg-lilac-soft p-4 text-lilac">
+            <a href="tel:9999999999" class="mt-auto flex items-center gap-3 rounded-2xl bg-lilac-soft p-4 text-lilac">
               <span class="grid size-10 shrink-0 place-items-center rounded-full bg-white"><Phone :size="18" /></span>
-              <span><small class="block text-muted">Dining assistance</small><strong>080 6555 1244</strong></span>
+              <span><small class="block text-muted">Dining assistance</small><strong>+91 99999 99999</strong></span>
             </a>
           </div>
         </aside>
@@ -173,7 +173,7 @@ onBeforeUnmount(() => {
             <div><p class="text-xs font-bold tracking-[.18em] text-white/60 uppercase">Dining at Nivara</p><h2 class="mt-2 text-3xl font-semibold tracking-[-.035em] sm:text-4xl">Ready whenever you are.</h2><p class="mt-2 text-white/65">Explore the full menu or speak with our dining team.</p></div>
             <div class="flex flex-wrap gap-3">
               <RouterLink class="inline-flex min-h-12 items-center gap-2 rounded-lg bg-white px-6 font-semibold text-lilac hover:-translate-y-0.5 hover:bg-lilac-soft" to="/product">View dining menu <ArrowRight :size="17" /></RouterLink>
-              <a class="inline-flex min-h-12 items-center gap-2 rounded-lg border border-white/20 px-5 font-semibold text-white hover:bg-white/10" href="tel:08065551244"><Phone :size="17" /> Call dining</a>
+              <a class="inline-flex min-h-12 items-center gap-2 rounded-lg border border-white/20 px-5 font-semibold text-white hover:bg-white/10" href="tel:9999999999"><Phone :size="17" /> Call dining</a>
             </div>
           </div>
         </div>
@@ -212,7 +212,7 @@ onBeforeUnmount(() => {
         <div class="sm:col-span-2 lg:col-span-3">
           <h2 class="text-sm font-semibold tracking-wide">Guest assistance</h2>
           <div class="mt-5 grid gap-4 text-sm">
-            <a class="flex items-center gap-3 text-white/55 hover:text-white" href="tel:08065551244"><span class="grid size-9 place-items-center rounded-full bg-white/7 text-white"><Phone :size="15" /></span><span><small class="block text-white/35">Call us</small>080 6555 1244</span></a>
+            <a class="flex items-center gap-3 text-white/55 hover:text-white" href="tel:9999999999"><span class="grid size-9 place-items-center rounded-full bg-white/7 text-white"><Phone :size="15" /></span><span><small class="block text-white/35">Call us</small>+91 99999 99999</span></a>
             <a class="flex items-center gap-3 text-white/55 hover:text-white" href="mailto:reservations@nivarahotels.com"><span class="grid size-9 place-items-center rounded-full bg-white/7 text-white"><Mail :size="15" /></span><span class="min-w-0"><small class="block text-white/35">Email</small><span class="break-all">reservations@nivarahotels.com</span></span></a>
             <div class="flex items-center gap-3 text-white/55"><span class="grid size-9 place-items-center rounded-full bg-white/7 text-white"><Clock3 :size="15" /></span><span><small class="block text-white/35">Dining hours</small>7:30 AM–10:30 PM</span></div>
           </div>
@@ -222,7 +222,13 @@ onBeforeUnmount(() => {
       <div class="border-t border-white/8">
         <div class="page-shell flex flex-col gap-3 py-5 text-xs text-white/35 sm:flex-row sm:items-center sm:justify-between">
           <span>© {{ new Date().getFullYear() }} Nivara Hotels. All rights reserved.</span>
-          <div class="flex gap-5"><a class="hover:text-white" href="https://lilachotels.com/privacy/" target="_blank" rel="noreferrer">Privacy</a><RouterLink class="hover:text-white" to="/contact">Contacts</RouterLink></div>
+          <div class="flex flex-wrap gap-4 sm:gap-6">
+            <RouterLink class="hover:text-white transition-colors" to="/privacy-policy">Privacy Policy</RouterLink>
+            <RouterLink class="hover:text-white transition-colors" to="/cookies-policy">Cookies Policy</RouterLink>
+            <RouterLink class="hover:text-white transition-colors" to="/refund-policy">Refund & Cancellation</RouterLink>
+            <RouterLink class="hover:text-white transition-colors" to="/terms">Terms & Conditions</RouterLink>
+            <RouterLink class="hover:text-white transition-colors" to="/contact">Contacts</RouterLink>
+          </div>
         </div>
       </div>
     </footer>

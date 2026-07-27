@@ -126,7 +126,7 @@ onBeforeUnmount(() => window.clearInterval(heroTimer))
                 <p class="text-[11px] font-bold tracking-[.22em] text-ink/60 uppercase">{{ currentHero.eyebrow }}</p>
               </div>
               <h1
-                class="mt-4 max-w-2xl text-[clamp(2.45rem,4.35vw,4.45rem)] leading-[.96] font-semibold tracking-[-.06em] sm:mt-5"
+                class="mt-4 max-w-2xl text-[clamp(2.45rem,4.35vw,4.45rem)] leading-[.96] font-semibold tracking-tighter font-serif sm:mt-5"
               >{{ currentHero.title }}</h1>
               <p class="mt-4 max-w-xl text-sm leading-6 text-ink/65 sm:mt-5 sm:text-lg sm:leading-8">{{ currentHero.copy }}</p>
             </div>
@@ -160,7 +160,7 @@ onBeforeUnmount(() => window.clearInterval(heroTimer))
           </div>
         </div>
 
-        <div class="relative order-first aspect-square overflow-hidden sm:aspect-[4/3] lg:order-last lg:aspect-auto lg:min-h-full">
+        <div class="relative order-first aspect-square overflow-hidden sm:aspect-4/3 lg:order-last lg:aspect-auto lg:min-h-full">
           <Transition name="hero-image" mode="out-in">
             <img :key="currentHero.image" class="absolute inset-0 h-full w-full object-cover" :src="currentHero.image" :alt="currentHero.dish" />
           </Transition>
@@ -224,7 +224,7 @@ onBeforeUnmount(() => window.clearInterval(heroTimer))
           <div class="absolute inset-0 bg-linear-to-t from-ink via-ink/5 to-transparent"></div>
           <div class="absolute right-0 bottom-0 left-0 p-7 text-white sm:p-10">
             <span class="inline-flex items-center gap-2 rounded-lg bg-white/12 px-3 py-1.5 text-xs font-semibold backdrop-blur">Regional table</span>
-            <h2 class="mt-4 text-4xl font-semibold tracking-[-.045em] sm:text-5xl">A generous taste of the South.</h2>
+            <h2 class="mt-4 text-4xl font-semibold tracking-[-.045em] font-serif sm:text-5xl">A generous taste of the South.</h2>
             <span class="mt-6 inline-flex items-center gap-2 font-semibold">Discover local favourites <ArrowRight :size="18" /></span>
           </div>
         </RouterLink>
@@ -235,7 +235,7 @@ onBeforeUnmount(() => window.clearInterval(heroTimer))
           ]" :key="feature.title" to="/product" class="editorial-card group relative min-h-58 overflow-hidden rounded-xl bg-ink">
             <img class="absolute inset-0 h-full w-full object-cover opacity-85 duration-700 group-hover:scale-105" :src="feature.image" :alt="feature.title" />
             <div class="absolute inset-0 bg-linear-to-r from-ink/85 via-ink/25 to-transparent"></div>
-            <div class="absolute inset-y-0 left-0 flex max-w-sm flex-col justify-center p-7 text-white"><p class="text-xs font-bold tracking-[.16em] text-white/65 uppercase">{{ feature.eyebrow }}</p><h3 class="mt-3 text-3xl leading-tight font-semibold tracking-[-.03em]">{{ feature.title }}</h3><ArrowRight class="mt-5" :size="19" /></div>
+            <div class="absolute inset-y-0 left-0 flex max-w-sm flex-col justify-center p-7 text-white"><p class="text-xs font-bold tracking-[.16em] text-white/65 uppercase">{{ feature.eyebrow }}</p><h3 class="mt-3 text-3xl leading-tight font-semibold tracking-[-.03em] font-serif">{{ feature.title }}</h3><ArrowRight class="mt-5" :size="19" /></div>
           </RouterLink>
         </div>
       </div>
@@ -249,7 +249,7 @@ onBeforeUnmount(() => window.clearInterval(heroTimer))
       <div class="grid items-center gap-10 lg:grid-cols-[.88fr_1.12fr] lg:gap-14">
         <div>
           <div class="flex items-center gap-3"><span class="h-px w-9 bg-white/35"></span><p class="text-xs font-bold tracking-[.2em] text-white/65 uppercase">The Nivara table</p></div>
-          <h2 class="mt-5 text-4xl leading-[1.04] font-semibold tracking-tighter md:text-5xl lg:text-[3.5rem]">Comforting food, made with thoughtful details.</h2>
+          <h2 class="mt-5 text-4xl leading-[1.04] font-semibold tracking-tighter font-serif md:text-5xl lg:text-[3.5rem]">Comforting food, made with thoughtful details.</h2>
           <p class="mt-6 max-w-lg text-lg leading-8 text-white/68">Every tray is considered as a whole—from flavour and freshness to the moment it arrives at your door.</p>
           <div class="mt-8 grid max-w-lg grid-cols-1 gap-3 min-[400px]:grid-cols-2">
             <div v-for="detail in [
@@ -272,7 +272,7 @@ onBeforeUnmount(() => window.clearInterval(heroTimer))
           <div :key="trayType" class="relative overflow-hidden rounded-xl bg-white p-4 text-ink shadow-[0_30px_80px_rgba(40,16,37,.22)] sm:p-6">
             <div class="absolute top-0 right-0 h-32 w-32 rounded-bl-full bg-lilac-soft"></div>
             <div class="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
-              <div class="relative"><p class="text-xs font-bold tracking-[.16em] text-lilac uppercase">{{ activeTray.eyebrow }}</p><h3 class="mt-2 text-2xl font-semibold">{{ activeTray.title }}</h3><p class="mt-2 max-w-md text-sm text-muted">{{ activeTray.copy }}</p></div>
+              <div class="relative"><p class="text-xs font-bold tracking-[.16em] text-lilac uppercase">{{ activeTray.eyebrow }}</p><h3 class="mt-2 text-2xl font-semibold font-serif">{{ activeTray.title }}</h3><p class="mt-2 max-w-md text-sm text-muted">{{ activeTray.copy }}</p></div>
               <div class="relative shrink-0 sm:text-right"><small class="text-muted">Complete tray</small><strong class="block text-2xl text-lilac">₹{{ trayTotal }}</strong></div>
             </div>
             <div class="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
@@ -304,7 +304,7 @@ onBeforeUnmount(() => window.clearInterval(heroTimer))
           </div>
           <div class="relative max-w-sm">
             <p class="text-xs font-bold tracking-[.2em] text-white/55 uppercase">Guest notes</p>
-            <h2 class="mt-5 text-4xl leading-[1.05] font-semibold tracking-tighter sm:text-5xl">What our guests say</h2>
+            <h2 class="mt-5 text-4xl leading-[1.05] font-semibold tracking-tighter font-serif sm:text-5xl">What our guests say</h2>
             <p class="mt-5 leading-7 text-white/58">Stories of warm meals, thoughtful service, and stays that felt a little more personal.</p>
           </div>
           <div class="absolute bottom-8 left-7 flex items-center gap-3 sm:bottom-10 sm:left-10 lg:bottom-12 lg:left-12">
@@ -340,11 +340,11 @@ onBeforeUnmount(() => window.clearInterval(heroTimer))
       <div class="max-w-3xl">
         <span class="inline-flex size-14 items-center justify-center rounded-full border border-white/18 bg-white/8 backdrop-blur"><UtensilsCrossed :size="24" /></span>
         <p class="mt-8 text-xs font-bold tracking-[.22em] text-white/55 uppercase">Your evening, beautifully considered</p>
-        <h2 class="mt-5 text-[clamp(2.8rem,6vw,5.25rem)] leading-[.9] font-semibold tracking-[-.07em]">Stay in.<br />Dine beautifully.</h2>
+        <h2 class="mt-5 text-[clamp(2.8rem,6vw,5.25rem)] leading-[.9] font-semibold tracking-tighter font-serif">Stay in.<br />Dine beautifully.</h2>
         <p class="mt-7 max-w-xl text-lg leading-8 text-white/65 sm:text-xl">Seventy dishes, one thoughtfully designed menu, and the quiet luxury of having it brought to your room.</p>
         <div class="mt-9 flex flex-wrap gap-3">
           <RouterLink class="inline-flex min-h-13 items-center gap-2 rounded-lg bg-white px-7 font-semibold text-lilac hover:-translate-y-0.5 hover:bg-lilac-soft" to="/product">Open the dining menu <ArrowRight :size="18" /></RouterLink>
-          <a class="inline-flex min-h-13 items-center rounded-lg border border-white/20 px-6 font-semibold text-white backdrop-blur hover:bg-white/10" href="tel:08065551244">Speak with dining</a>
+          <a class="inline-flex min-h-13 items-center rounded-lg border border-white/20 px-6 font-semibold text-white backdrop-blur hover:bg-white/10" href="tel:9999999999">Speak with dining</a>
         </div>
       </div>
       <div class="absolute right-8 bottom-8 hidden items-center gap-3 border-l border-white/20 pl-5 text-sm text-white/55 lg:flex"><Clock3 :size="18" /><span>Available daily<br /><strong class="text-white">7:30 AM–10:30 PM</strong></span></div>

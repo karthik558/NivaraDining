@@ -129,7 +129,7 @@ onMounted(() => {
     <div class="page-shell relative flex min-h-130 items-center py-16 lg:min-h-147.5">
       <div class="max-w-3xl">
         <div class="flex items-center gap-3"><span class="h-px w-9 bg-white/35"></span><p class="text-xs font-bold tracking-[.22em] text-white/60 uppercase">In-room dining</p></div>
-        <h1 class="mt-6 text-[clamp(3.2rem,7vw,6.7rem)] leading-[.9] font-semibold tracking-[-.07em]">A menu for<br />every mood.</h1>
+        <h1 class="mt-6 text-[clamp(3.2rem,7vw,6.7rem)] leading-[.9] font-semibold tracking-tighter font-serif">A menu for<br />every mood.</h1>
         <p class="mt-7 max-w-xl text-lg leading-8 text-white/65">Thoughtfully prepared dishes—from unhurried breakfasts and regional favourites to lighter plates and beautiful endings.</p>
         <div class="mt-8 flex flex-wrap gap-3 text-sm">
           <span class="inline-flex items-center gap-2 rounded-lg border border-white/16 bg-white/7 px-4 py-2.5 backdrop-blur"><ChefHat :size="16" /> Made to order</span>

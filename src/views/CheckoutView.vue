@@ -116,7 +116,7 @@ const generateInvoice = async () => {
   doc.setFontSize(9)
   doc.setTextColor(113, 107, 112)
   doc.text('Thank you for dining with Nivara Hotels.', left, 286)
-  doc.text('Dining assistance: 080 6555 1244', right, 286, { align: 'right' })
+  doc.text('Dining assistance: +91 99999 99999', right, 286, { align: 'right' })
   doc.save(`${orderNumber}-invoice.pdf`)
 }
 
@@ -133,14 +133,18 @@ const placeOrder = async () => {
     `Nivara in-room dining order ${orderNumber}\n\nGuest: ${form.firstName} ${form.lastName}\nRoom: ${form.roomNumber}\nPhone: ${form.phoneNumber}\n\n${items}\n\nSubtotal: Rs.${cartSubtotal.value.toFixed(2)}\nCoupon: ${state.coupon?.code || 'None'}\nGST (18%): Rs.${cartTax.value.toFixed(2)}\nTotal: Rs.${cartTotal.value.toFixed(2)}\nSpecial request: ${form.specialRequest || 'None'}`,
   )
   submitted.value = true
-  window.open(`https://wa.me/8129624036?text=${message}`, '_blank', 'noopener,noreferrer')
+  window.open(`https://wa.me/919999999999?text=${message}`, '_blank', 'noopener,noreferrer')
 }
 </script>
 
 <template>
-  <section class="relative overflow-hidden bg-warm py-12 md:py-16">
-    <div class="absolute -top-30 right-0 size-80 rounded-full bg-lilac/6 blur-3xl"></div>
-    <div class="page-shell relative"><p class="eyebrow">Final step</p><h1 class="display-title mt-3">Guest details & invoice</h1><p class="mt-4 max-w-2xl text-muted">Complete the delivery details, download your itemised invoice, and send the order directly to the dining team.</p></div>
+  <section class="relative overflow-hidden bg-[#211a20] py-14 text-white lg:py-20">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_15%_10%,rgba(120,38,113,.75),transparent_40%)]"></div>
+    <div class="page-shell relative">
+      <div class="flex items-center gap-3"><span class="h-px w-9 bg-white/35"></span><p class="text-xs font-bold tracking-[.22em] text-white/60 uppercase">Final Checkout</p></div>
+      <h1 class="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl font-serif">Guest Details &amp; Invoice</h1>
+      <p class="mt-4 max-w-2xl text-lg text-white/65">Complete your room delivery details, download your itemised PDF receipt, and confirm your order.</p>
+    </div>
   </section>
 
   <section class="section-space">

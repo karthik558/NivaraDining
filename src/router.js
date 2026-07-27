@@ -20,6 +20,10 @@ const routes = [
       { path: 'wishlist', name: 'wishlist', component: SimpleView, meta: { page: 'wishlist', title: 'Saved Culinary Favorites | Nivara Hotels' } },
       { path: 'contact', name: 'contact', component: SimpleView, meta: { page: 'contact', title: 'Guest Assistance & Concierge | Nivara Hotels & Stays' } },
       { path: 'sign-in', name: 'sign-in', component: SimpleView, meta: { page: 'sign-in', title: 'Guest Portal Access | Nivara Hospitality' } },
+      { path: 'privacy-policy', name: 'privacy-policy', component: SimpleView, meta: { page: 'privacy-policy', title: 'Privacy Policy | Nivara Hotels & Stays' } },
+      { path: 'cookies-policy', name: 'cookies-policy', component: SimpleView, meta: { page: 'cookies-policy', title: 'Cookies & Local Storage Policy | Nivara Hotels' } },
+      { path: 'refund-policy', name: 'refund-policy', component: SimpleView, meta: { page: 'refund-policy', title: 'Refund & Cancellation Policy | Nivara In-Room Dining' } },
+      { path: 'terms', name: 'terms', component: SimpleView, meta: { page: 'terms', title: 'Terms & Conditions of Service | Nivara Hotels' } },
     ],
   },
   {

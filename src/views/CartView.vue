@@ -28,9 +28,13 @@ const clearCoupon = () => {
 </script>
 
 <template>
-  <section class="relative overflow-hidden bg-warm py-12 md:py-16">
-    <div class="absolute -top-30 right-0 size-80 rounded-full bg-lilac/6 blur-3xl"></div>
-    <div class="page-shell relative"><p class="eyebrow">Review your selection</p><h1 class="display-title mt-3">Your cart</h1><p class="mt-4 max-w-xl text-muted">Adjust quantities, apply a dining offer, and review the complete total before checkout.</p></div>
+  <section class="relative overflow-hidden bg-[#211a20] py-14 text-white lg:py-20">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_15%_10%,rgba(120,38,113,.75),transparent_40%)]"></div>
+    <div class="page-shell relative">
+      <div class="flex items-center gap-3"><span class="h-px w-9 bg-white/35"></span><p class="text-xs font-bold tracking-[.22em] text-white/60 uppercase">Review your selection</p></div>
+      <h1 class="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl font-serif">Your Order Cart</h1>
+      <p class="mt-4 max-w-2xl text-lg text-white/65">Adjust quantities, apply a dining offer, and review the complete total before room delivery checkout.</p>
+    </div>
   </section>
 
   <section class="section-space">
@@ -38,7 +42,7 @@ const clearCoupon = () => {
       <div v-if="state.cart.length" class="grid items-start gap-7 lg:grid-cols-[1fr_400px]">
         <div class="space-y-4">
           <article v-for="item in state.cart" :key="item.id" class="surface group grid gap-4 p-3 sm:grid-cols-[128px_1fr] sm:gap-6 sm:p-5">
-            <img class="aspect-[1.25/1] w-full rounded-xl object-cover sm:aspect-square sm:size-32" :src="`/assets/img/product/${item.imgf}`" :alt="item.title" />
+            <img class="aspect-1.25/1 w-full rounded-xl object-cover sm:aspect-square sm:size-32" :src="`/assets/img/product/${item.imgf}`" :alt="item.title" />
             <div class="flex min-w-0 flex-col">
               <div class="flex justify-between gap-3">
                 <div>

@@ -9,6 +9,7 @@
   --color-line: #e9e3e7;
   --color-canvas: #fbf9fa;
   --color-warm: #f5eee4;
+  --font-serif: "Playfair Display", "Georgia", "Times New Roman", serif;
   --font-sans: "Jost", "Avenir Next", "Segoe UI", sans-serif;
   --shadow-card: 0 12px 36px rgba(41, 26, 38, 0.08);
   --radius-md: 0.625rem;
@@ -65,11 +66,11 @@
   }
 
   .display-title {
-    @apply text-4xl leading-[1.05] font-semibold tracking-[-0.04em] text-ink md:text-5xl lg:text-6xl;
+    @apply font-serif text-4xl leading-[1.05] font-semibold tracking-[-0.04em] text-ink md:text-5xl lg:text-6xl;
   }
 
   .section-title {
-    @apply text-3xl leading-tight font-semibold tracking-[-0.035em] text-ink md:text-4xl;
+    @apply font-serif text-3xl leading-tight font-semibold tracking-[-0.035em] text-ink md:text-4xl;
   }
 
   .primary-button {
