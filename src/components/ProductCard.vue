@@ -17,7 +17,7 @@ const saved = computed(() => state.wishlist.some((item) => item.id === props.pro
     </div>
     <div class="flex flex-1 flex-col px-2 pt-4 pb-2">
       <h3 class="min-h-11 text-[15px] leading-snug font-semibold sm:text-base">{{ product.title }}</h3>
-      <div class="mt-2 flex items-center gap-1 text-[#b57a13]">
+      <div class="mt-2 flex items-center gap-1 text-amber-500">
         <Star v-for="star in 5" :key="star" :size="12" :fill="star <= Math.round(product.rating / 20) ? 'currentColor' : 'none'" />
         <span class="ml-1 text-xs text-muted">{{ product.rating }}</span>
       </div>

@@ -169,10 +169,6 @@ onBeforeUnmount(() => window.clearInterval(heroTimer))
             <span class="grid size-10 shrink-0 place-items-center rounded-full bg-lilac text-white sm:size-12"><ChefHat :size="20" /></span>
             <div class="min-w-0"><strong class="block truncate">{{ currentHero.dish }}</strong><small class="mt-0.5 block text-muted">{{ currentHero.note }}</small></div>
           </div>
-          <div class="hero-float hero-float--delay absolute top-7 right-6 hidden border border-white/20 bg-white/88 px-4 py-3 text-ink shadow-xl backdrop-blur-xl sm:block lg:top-12 lg:right-12">
-            <div class="flex gap-1 text-[#b57a13]"><Star v-for="star in 5" :key="star" :size="12" fill="currentColor" /></div>
-            <small class="mt-1 block font-semibold">Guest favourite</small>
-          </div>
         </div>
       </div>
 
