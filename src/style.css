@@ -79,6 +79,14 @@
     @apply relative inline-grid size-11 shrink-0 place-items-center rounded-full border border-line bg-white text-ink hover:-translate-y-0.5 hover:border-lilac hover:bg-lilac hover:text-white;
   }
 
+  .desktop-nav-link {
+    @apply inline-flex min-h-11 shrink-0 items-center justify-center rounded-full px-6 py-2.5 text-muted hover:bg-lilac-soft hover:text-lilac;
+  }
+
+  .desktop-nav-link.router-link-exact-active {
+    @apply bg-lilac px-6 text-white shadow-sm;
+  }
+
   .mobile-nav-link {
     @apply flex min-h-13 items-center justify-between rounded-xl px-3 text-ink hover:bg-lilac-soft hover:text-lilac;
   }

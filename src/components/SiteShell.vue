@@ -3,11 +3,14 @@ import { onBeforeUnmount, ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import {
   Menu, Search, ShoppingBag, Heart, UserRound, X, Minus, Plus,
-  Phone, Clock3, ArrowRight, Mail, ChevronRight,
+  Phone, Clock3, ArrowRight, Mail, ChevronRight, Trash2,
 } from '@lucide/vue'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faFacebookF, faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
-import { cartCount, cartSubtotal, removeFromCart, state, updateQuantity } from '../store'
+import {
+  cartCount, cartDiscount, cartSubtotal, cartTax, cartTotal,
+  removeFromCart, state, updateQuantity,
+} from '../store'
 
 const router = useRouter()
 const mobileOpen = ref(false)
@@ -16,7 +19,7 @@ const search = ref('')
 const submitSearch = () => {
   state.search = search.value.trim()
   mobileOpen.value = false
-  router.push({ path: '/product', query: state.search ? { q: state.search } : {} })
+  router.push({ path: '/product', query: state.search ? { q: state.search } : {}, hash: '#menu-results' })
 }
 
 const closeMobileNav = () => {
@@ -57,22 +60,22 @@ onBeforeUnmount(() => {
         </div>
       </div>
 
-      <div class="border-b border-line bg-white/95 backdrop-blur-xl">
+      <div class="border-b border-line bg-white/95 shadow-[0_8px_30px_rgba(33,29,32,.04)] backdrop-blur-xl">
         <div class="page-shell grid min-h-17 grid-cols-[44px_1fr_44px] items-center gap-2 sm:min-h-20 sm:grid-cols-[44px_auto_1fr_auto] sm:gap-4 lg:flex lg:min-h-24">
-          <button class="icon-button lg:hidden" type="button" aria-label="Open navigation" aria-controls="mobile-navigation" :aria-expanded="mobileOpen" @click="mobileOpen = true">
+          <button class="icon-button xl:hidden" type="button" aria-label="Open navigation" aria-controls="mobile-navigation" :aria-expanded="mobileOpen" @click="mobileOpen = true">
             <Menu :size="20" />
           </button>
           <RouterLink to="/" class="mx-auto shrink-0 sm:mx-0" aria-label="Lilac Hotels home">
             <img class="h-12 w-25 object-contain sm:h-14 sm:w-28 lg:h-18 lg:w-40" src="/assets/img/logo/logo.png" alt="Lilac Hotels" />
           </RouterLink>
 
-          <nav class="ml-4 hidden items-center gap-8 text-sm font-semibold lg:flex" aria-label="Primary">
-            <RouterLink to="/" class="hover:text-lilac" active-class="text-lilac">Home</RouterLink>
-            <RouterLink to="/product" class="hover:text-lilac" active-class="text-lilac">Dining menu</RouterLink>
-            <RouterLink to="/contact" class="hover:text-lilac" active-class="text-lilac">Contact</RouterLink>
+          <nav class="mx-4 hidden shrink-0 items-center gap-1 rounded-full border border-line bg-canvas p-1.5 text-sm font-semibold xl:flex" aria-label="Primary">
+            <RouterLink to="/" class="desktop-nav-link">Home</RouterLink>
+            <RouterLink to="/product" class="desktop-nav-link">Dining menu</RouterLink>
+            <RouterLink to="/contact" class="desktop-nav-link">Guest support</RouterLink>
           </nav>
 
-          <form class="relative ml-auto hidden w-full max-w-80 md:block" role="search" @submit.prevent="submitSearch">
+          <form class="relative ml-auto hidden w-full max-w-64 md:block xl:max-w-72" role="search" @submit.prevent="submitSearch">
             <label class="sr-only" for="site-search">Search the menu</label>
             <input id="site-search" v-model="search" class="field rounded-full pr-12" type="search" placeholder="Search the menu" />
             <button class="absolute top-1 right-1 grid size-10 place-items-center rounded-full bg-lilac text-white" aria-label="Search">
@@ -82,11 +85,18 @@ onBeforeUnmount(() => {
 
           <div class="flex items-center justify-end gap-2">
             <RouterLink class="icon-button hidden sm:grid" to="/sign-in" aria-label="Sign in"><UserRound :size="18" /></RouterLink>
-            <RouterLink class="icon-button hidden sm:grid" to="/wishlist" aria-label="Saved items">
+            <RouterLink class="icon-button hidden xl:grid" to="/wishlist" aria-label="Saved items">
               <Heart :size="18" />
               <span v-if="state.wishlist.length" class="absolute -top-1 -right-1 grid size-5 place-items-center rounded-full bg-lilac text-[10px] font-bold text-white">{{ state.wishlist.length }}</span>
             </RouterLink>
-            <button class="icon-button" type="button" aria-label="Open cart" @click="state.cartOpen = true">
+            <RouterLink class="hidden min-h-12 shrink-0 items-center gap-3 rounded-full bg-lilac py-2 pr-5 pl-3 font-semibold text-white hover:-translate-y-0.5 hover:bg-lilac-dark xl:inline-flex" to="/cart" aria-label="View cart">
+              <span class="relative grid size-8 place-items-center rounded-full bg-white/14">
+                <ShoppingBag :size="17" />
+                <span v-if="cartCount" class="absolute -top-2 -right-2 grid size-5 place-items-center rounded-full bg-white text-[10px] font-bold text-lilac">{{ cartCount }}</span>
+              </span>
+              <span><small class="block text-[10px] leading-none font-medium text-white/60">Your order</small>View cart</span>
+            </RouterLink>
+            <button class="icon-button xl:hidden" type="button" aria-label="Open cart" @click="state.cartOpen = true">
               <ShoppingBag :size="18" />
               <span v-if="cartCount" class="absolute -top-1 -right-1 grid size-5 place-items-center rounded-full bg-lilac text-[10px] font-bold text-white">{{ cartCount }}</span>
             </button>
@@ -216,7 +226,7 @@ onBeforeUnmount(() => {
                   <button class="grid size-7 place-items-center rounded-full border border-line" @click="updateQuantity(item.id, item.qty - 1)"><Minus :size="13" /></button>
                   <span class="w-5 text-center text-sm">{{ item.qty }}</span>
                   <button class="grid size-7 place-items-center rounded-full border border-line" @click="updateQuantity(item.id, item.qty + 1)"><Plus :size="13" /></button>
-                  <button class="ml-auto text-xs font-semibold text-muted hover:text-lilac" @click="removeFromCart(item.id)">Remove</button>
+                  <button class="ml-auto inline-flex min-h-8 items-center gap-1.5 rounded-full bg-red-50 px-3 text-xs font-semibold text-red-700 hover:bg-red-500 hover:text-white" @click="removeFromCart(item.id)"><Trash2 :size="13" /> Remove</button>
                 </div>
               </div>
             </article>
@@ -225,8 +235,16 @@ onBeforeUnmount(() => {
             <div><ShoppingBag class="mx-auto text-lilac" :size="38" /><h3 class="mt-4 text-xl font-semibold">Your order is empty</h3><p class="mt-2 text-sm text-muted">Explore the menu to add something delicious.</p></div>
           </div>
           <div v-if="state.cart.length" class="mt-6 border-t border-line pt-5">
-            <div class="flex justify-between text-lg font-semibold"><span>Subtotal</span><span>₹{{ cartSubtotal.toFixed(2) }}</span></div>
-            <RouterLink class="primary-button mt-5 w-full" to="/checkout" @click="state.cartOpen = false">Continue to checkout <ArrowRight :size="17" /></RouterLink>
+            <div class="space-y-2 text-sm">
+              <div class="flex justify-between text-muted"><span>Subtotal</span><span class="text-ink">₹{{ cartSubtotal.toFixed(2) }}</span></div>
+              <div v-if="cartDiscount" class="flex justify-between text-green-700"><span>Coupon</span><span>−₹{{ cartDiscount.toFixed(2) }}</span></div>
+              <div class="flex justify-between text-muted"><span>GST (18%)</span><span class="text-ink">₹{{ cartTax.toFixed(2) }}</span></div>
+              <div class="flex justify-between border-t border-line pt-3 text-lg font-semibold"><span>Total</span><span>₹{{ cartTotal.toFixed(2) }}</span></div>
+            </div>
+            <div class="mt-5 grid grid-cols-2 gap-3">
+              <RouterLink class="secondary-button px-3!" to="/cart" @click="state.cartOpen = false">View cart</RouterLink>
+              <RouterLink class="primary-button px-3!" to="/checkout" @click="state.cartOpen = false">Checkout <ArrowRight :size="16" /></RouterLink>
+            </div>
           </div>
         </aside>
       </div>

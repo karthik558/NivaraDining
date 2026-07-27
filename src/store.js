@@ -3,7 +3,7 @@ import products from '../data/products.json'
 import extendedProducts from '../data/extended-products.json'
 
 const legacyCategoryLabels = {
-  atfav: 'Guest Favourites',
+  atfav: 'All Time Favorites',
   sandwich: 'Sandwiches',
   salads: 'Salads',
   burgers: 'Burgers',
@@ -11,9 +11,12 @@ const legacyCategoryLabels = {
   deserts: 'Desserts',
   pizza: 'Pizza',
   straters: 'Starters',
+  drinks: 'Drinks',
+  Beverages: 'Drinks',
+  'Indian Mains': 'Indian Entrées',
 }
 
-const normalizedProducts = products.map((product) => ({
+const normalizedProducts = [...products, ...extendedProducts].map((product) => ({
   ...product,
   category: product.category?.map((category) => ({
     ...category,
@@ -30,23 +33,32 @@ const saved = (key) => {
 }
 
 export const state = reactive({
-  products: [...normalizedProducts, ...extendedProducts],
+  products: normalizedProducts,
   cart: saved('lilac-cart'),
   wishlist: saved('lilac-wishlist'),
   search: '',
   cartOpen: false,
   toast: '',
+  coupon: saved('lilac-coupon')[0] || null,
 })
 
 const persist = () => {
   localStorage.setItem('lilac-cart', JSON.stringify(state.cart))
   localStorage.setItem('lilac-wishlist', JSON.stringify(state.wishlist))
+  localStorage.setItem('lilac-coupon', JSON.stringify(state.coupon ? [state.coupon] : []))
 }
 
-watch(() => [state.cart, state.wishlist], persist, { deep: true })
+watch(() => [state.cart, state.wishlist, state.coupon], persist, { deep: true })
 
 export const cartCount = computed(() => state.cart.reduce((sum, item) => sum + item.qty, 0))
 export const cartSubtotal = computed(() => state.cart.reduce((sum, item) => sum + item.qty * item.price.max, 0))
+export const cartDiscount = computed(() => {
+  if (!state.coupon) return 0
+  return Math.min(cartSubtotal.value * state.coupon.rate, state.coupon.maxDiscount)
+})
+export const taxableAmount = computed(() => Math.max(0, cartSubtotal.value - cartDiscount.value))
+export const cartTax = computed(() => taxableAmount.value * 0.18)
+export const cartTotal = computed(() => taxableAmount.value + cartTax.value)
 
 const notify = (message) => {
   state.toast = message
@@ -81,4 +93,21 @@ export const removeFromCart = (id) => {
 export const updateQuantity = (id, qty) => {
   const item = state.cart.find((entry) => entry.id === id)
   if (item) item.qty = Math.max(1, qty)
+}
+
+export const applyCoupon = (code) => {
+  const normalized = code.trim().toUpperCase()
+  const coupons = {
+    LILAC10: { code: 'LILAC10', rate: 0.1, maxDiscount: 500, label: '10% off' },
+    WELCOME15: { code: 'WELCOME15', rate: 0.15, maxDiscount: 750, label: '15% off' },
+  }
+  if (!coupons[normalized]) return { ok: false, message: 'That coupon is not valid. Try LILAC10.' }
+  state.coupon = coupons[normalized]
+  notify(`${state.coupon.code} applied`)
+  return { ok: true, message: `${state.coupon.label} applied to your order.` }
+}
+
+export const removeCoupon = () => {
+  state.coupon = null
+  notify('Coupon removed')
 }

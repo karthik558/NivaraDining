@@ -24,7 +24,7 @@ const saved = computed(() => state.wishlist.some((item) => item.id === props.pro
       <div class="mt-auto flex items-center justify-between gap-3 pt-4">
         <p class="text-lg font-bold text-lilac">₹{{ product.price.max }}</p>
         <button class="inline-flex min-h-10 items-center gap-1.5 rounded-full bg-lilac px-3.5 text-xs font-semibold text-white hover:bg-lilac-dark sm:px-4 sm:text-sm" @click="addToCart(product)">
-          <Plus :size="16" /> <span class="hidden xs:inline">Add</span>
+          <Plus :size="16" /> <span class="hidden min-[400px]:inline">Add</span>
         </button>
       </div>
     </div>

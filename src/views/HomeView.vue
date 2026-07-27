@@ -43,10 +43,10 @@ const heroSlides = [
 
 const categoryTabs = [
   { label: 'Breakfast', image: '/assets/img/product/ai/ai-product-01.jpg' },
-  { label: 'Indian Mains', image: '/assets/img/product/ai/ai-product-26.jpg' },
+  { label: 'Indian Entrées', image: '/assets/img/product/ai/ai-product-26.jpg' },
   { label: 'Salads', image: '/assets/img/product/ai/ai-product-12.jpg' },
   { label: 'Desserts', image: '/assets/img/product/ai/ai-product-44.jpg' },
-  { label: 'Beverages', image: '/assets/img/product/ai/ai-product-49.jpg' },
+  { label: 'Drinks', image: '/assets/img/product/ai/ai-product-49.jpg' },
 ]
 
 const trayOptions = {
@@ -109,22 +109,25 @@ onBeforeUnmount(() => window.clearInterval(heroTimer))
     <div class="hero-glow hero-glow--one"></div>
     <div class="hero-glow hero-glow--two"></div>
     <div class="relative">
-      <div class="relative grid min-h-[calc(100svh-112px)] overflow-hidden bg-[#241d23] text-white lg:min-h-[calc(100svh-136px)] lg:grid-cols-[.92fr_1.08fr]">
-        <div class="relative z-20 flex flex-col justify-end px-6 pt-14 pb-12 sm:px-10 lg:justify-center lg:py-20 lg:pr-12 lg:pl-[clamp(3.5rem,7vw,8.5rem)]">
+      <div class="relative grid min-h-[520px] overflow-hidden bg-[#241d23] text-white lg:h-[590px] lg:min-h-0 lg:grid-cols-[.9fr_1.1fr]">
+        <div class="relative z-20 flex flex-col justify-end px-6 pt-14 pb-12 sm:px-10 lg:justify-center lg:px-[clamp(3.5rem,7vw,8.5rem)] lg:pt-10 lg:pb-24">
           <Transition name="hero-copy" mode="out-in">
             <div :key="currentHero.title">
               <div class="flex items-center gap-3">
                 <span class="h-px w-9 bg-white/40"></span>
                 <p class="text-[11px] font-bold tracking-[.22em] text-white/65 uppercase">{{ currentHero.eyebrow }}</p>
               </div>
-              <h1 class="mt-6 max-w-2xl text-[clamp(2.9rem,6.3vw,5.8rem)] leading-[.94] font-semibold tracking-[-.065em]">{{ currentHero.title }}</h1>
+              <h1
+                class="mt-6 max-w-2xl leading-[.94] font-semibold tracking-[-.065em]"
+                :class="heroIndex === 0 ? 'text-[clamp(2.5rem,4.35vw,4.45rem)]' : 'text-[clamp(2.8rem,5.4vw,5.2rem)]'"
+              >{{ currentHero.title }}</h1>
               <p class="mt-6 max-w-xl text-base leading-7 text-white/62 sm:text-lg sm:leading-8">{{ currentHero.copy }}</p>
             </div>
           </Transition>
 
           <div class="mt-9 flex flex-wrap gap-3">
-            <RouterLink class="inline-flex min-h-13 items-center gap-2 rounded-full bg-white px-6 font-semibold text-lilac hover:-translate-y-0.5 hover:bg-lilac-soft" to="/product">
-              Explore 70 dishes <ArrowRight :size="18" />
+            <RouterLink class="inline-flex min-h-13 items-center gap-2 rounded-full bg-white px-6 font-semibold text-lilac hover:-translate-y-0.5 hover:bg-lilac-soft" :to="{ path: '/product', hash: '#menu-results' }">
+              Explore the menu <ArrowRight :size="18" />
             </RouterLink>
             <button class="inline-flex min-h-13 items-center gap-2 rounded-full border border-white/18 px-5 font-semibold text-white hover:bg-white/8" @click="heroPaused = !heroPaused">
               <Pause v-if="!heroPaused" :size="17" /><Play v-else :size="17" />
@@ -132,7 +135,7 @@ onBeforeUnmount(() => window.clearInterval(heroTimer))
             </button>
           </div>
 
-          <div class="mt-11 flex items-center gap-4">
+          <div class="mt-9 flex items-center gap-4 lg:absolute lg:bottom-8 lg:left-[clamp(3.5rem,7vw,8.5rem)] lg:mt-0">
             <button class="grid size-11 place-items-center rounded-full border border-white/18 hover:bg-white hover:text-ink" aria-label="Previous story" @click="previousHero"><ArrowLeft :size="18" /></button>
             <div class="flex gap-2">
               <button
@@ -150,12 +153,12 @@ onBeforeUnmount(() => window.clearInterval(heroTimer))
           </div>
         </div>
 
-        <div class="relative order-first min-h-[42svh] overflow-hidden lg:order-last lg:min-h-full">
+        <div class="relative order-first min-h-[280px] overflow-hidden sm:min-h-[320px] lg:order-last lg:min-h-full">
           <Transition name="hero-image" mode="out-in">
             <img :key="currentHero.image" class="absolute inset-0 h-full w-full object-cover" :src="currentHero.image" :alt="currentHero.dish" />
           </Transition>
           <div class="absolute inset-0 bg-gradient-to-t from-[#241d23] via-transparent to-transparent lg:bg-gradient-to-r lg:from-[#241d23] lg:via-[#241d23]/5 lg:to-transparent"></div>
-          <div class="hero-float absolute right-5 bottom-6 left-5 flex items-center gap-4 border border-white/20 bg-white/90 p-4 text-ink shadow-2xl backdrop-blur-xl sm:right-8 sm:left-auto sm:w-72 lg:right-12 lg:bottom-10">
+          <div class="absolute right-5 bottom-6 left-5 flex min-h-20 items-center gap-4 rounded-2xl border border-white/20 bg-white/92 p-4 text-ink shadow-2xl backdrop-blur-xl sm:right-8 sm:left-auto sm:w-72 lg:right-10 lg:bottom-8">
             <span class="grid size-12 shrink-0 place-items-center rounded-full bg-lilac text-white"><ChefHat :size="21" /></span>
             <div class="min-w-0"><strong class="block truncate">{{ currentHero.dish }}</strong><small class="mt-0.5 block text-muted">{{ currentHero.note }}</small></div>
           </div>
@@ -199,7 +202,7 @@ onBeforeUnmount(() => window.clearInterval(heroTimer))
       </div>
 
       <Transition name="fade" mode="out-in">
-        <div :key="menuCategory" class="mt-6 grid grid-cols-2 gap-3 sm:gap-5 md:grid-cols-4">
+        <div :key="menuCategory" class="mt-6 grid grid-cols-1 gap-4 min-[400px]:grid-cols-2 sm:gap-5 md:grid-cols-4">
           <ProductCard v-for="product in activeCategoryProducts" :key="product.id" :product="product" />
         </div>
       </Transition>
