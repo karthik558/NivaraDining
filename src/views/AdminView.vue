@@ -48,7 +48,7 @@ const adminUsers = [
 ]
 
 const sectionConfig = computed(() => ({
-  dashboard: { title: 'Dining overview', copy: 'A current view of Lilac’s in-room dining catalogue and guest experience.' },
+  dashboard: { title: 'Dining overview', copy: 'A current view of Nivara’s in-room dining catalogue and guest experience.' },
   products: { title: 'Menu catalogue', copy: 'Manage all dishes, prices, categories, and menu availability.' },
   'deal products': { title: 'Featured deals', copy: 'Choose the dishes highlighted in promotional placements.' },
   'slider products': { title: 'Landing slides', copy: 'Manage the three stories displayed in the landing-page hero.' },
@@ -115,7 +115,7 @@ const itemStatus = (item) => {
 const itemDetails = (item) => {
   if (item.price) return `${item.category?.[0]?.type || 'Menu item'} · ₹${item.price.max}`
   if (item.offerPrice) return `${item.offerPrice} offer · ended ${new Intl.DateTimeFormat('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }).format(new Date(item.endTime))}`
-  if (section.value === 'testimonials') return `${item.title || 'Lilac Hotels'} · ${item.text?.replace(/[“”]/g, '').slice(0, 90)}${item.text?.length > 90 ? '…' : ''}`
+  if (section.value === 'testimonials') return `${item.title || 'Nivara Hotels'} · ${item.text?.replace(/[“”]/g, '').slice(0, 90)}${item.text?.length > 90 ? '…' : ''}`
   return item.subtitle || item.subTitle || item.description || 'Managed content'
 }
 
@@ -171,7 +171,7 @@ const deleteRow = (item) => {
   <div class="mx-auto max-w-370 p-4 sm:p-6 lg:p-8 xl:p-10">
     <div class="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
       <div>
-        <div class="flex items-center gap-2 text-xs font-bold tracking-[.16em] text-lilac uppercase"><span class="size-2 rounded-full bg-lilac"></span>Lilac IRD</div>
+        <div class="flex items-center gap-2 text-xs font-bold tracking-[.16em] text-lilac uppercase"><span class="size-2 rounded-full bg-lilac"></span>Nivara IRD</div>
         <h1 class="mt-3 text-3xl font-semibold tracking-[-.035em] md:text-4xl">{{ sectionConfig.title }}</h1>
         <p class="mt-2 max-w-2xl text-sm leading-6 text-muted">{{ sectionConfig.copy }}</p>
       </div>

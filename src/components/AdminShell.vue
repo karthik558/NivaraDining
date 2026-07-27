@@ -34,8 +34,9 @@ const logout = () => {
   <div class="min-h-screen bg-[#f5f3f4] text-ink">
     <header class="sticky top-0 z-40 flex min-h-16 items-center border-b border-line bg-white/96 px-4 shadow-[0_8px_24px_rgba(33,29,32,.04)] backdrop-blur-xl sm:px-6">
       <button class="icon-button rounded-lg! lg:hidden" type="button" aria-label="Open admin navigation" @click="open = true"><Menu :size="19" /></button>
-      <RouterLink to="/admin" class="ml-3 lg:ml-0" aria-label="Admin overview">
-        <img class="h-10 w-22 object-contain object-left" src="/assets/img/logo/logo.png" alt="Lilac Hotels" />
+      <RouterLink to="/admin" class="ml-3 lg:ml-0 flex items-center gap-3" aria-label="Nivara Admin overview">
+        <img src="/assets/img/logo/logo-transparent.png" alt="Nivara Admin" class="h-11 sm:h-12 w-auto object-contain shrink-0" />
+        <span class="rounded bg-lilac/10 px-2 py-0.5 text-[9px] font-bold tracking-wider text-lilac uppercase">ADMIN</span>
       </RouterLink>
 
       <div class="ml-auto flex items-center gap-2">
@@ -48,7 +49,13 @@ const logout = () => {
       <Transition name="fade">
         <div v-if="open" class="fixed inset-0 z-50 bg-ink/45 backdrop-blur-sm lg:hidden" @click.self="open = false">
           <aside class="flex h-full w-[88%] max-w-82 flex-col bg-[#201a1f] p-4 text-white">
-            <div class="flex items-center justify-between px-2 py-2"><img class="h-10 w-22 object-contain object-left" src="/assets/img/logo/logo-white.png" alt="Lilac Hotels" /><button class="grid size-10 place-items-center rounded-lg border border-white/15" @click="open = false"><X :size="18" /></button></div>
+            <div class="flex items-center justify-between px-2 py-2">
+              <div class="flex items-center gap-2">
+                <img src="/assets/img/logo/logo-white.png" alt="Nivara Admin" class="h-10 w-auto object-contain shrink-0" />
+                <span class="rounded bg-white/10 px-1.5 py-0.5 text-[8px] font-bold tracking-wider text-white/70 uppercase">ADMIN</span>
+              </div>
+              <button class="grid size-10 place-items-center rounded-lg border border-white/15" @click="open = false"><X :size="18" /></button>
+            </div>
             <nav class="mt-5 grid gap-1.5">
               <RouterLink v-for="link in links" :key="link.to" :to="link.to" class="admin-nav-link" :class="{ 'admin-nav-link--active': route.path === link.to }" @click="open = false">
                 <component :is="link.icon" :size="18" /><span><strong>{{ link.label }}</strong><small>{{ link.description }}</small></span>

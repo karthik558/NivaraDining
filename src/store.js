@@ -98,10 +98,13 @@ export const updateQuantity = (id, qty) => {
 export const applyCoupon = (code) => {
   const normalized = code.trim().toUpperCase()
   const coupons = {
-    LILAC10: { code: 'LILAC10', rate: 0.1, maxDiscount: 500, label: '10% off' },
+    NIVARA10: { code: 'NIVARA10', rate: 0.1, maxDiscount: 500, label: '10% off' },
+    VELORA10: { code: 'NIVARA10', rate: 0.1, maxDiscount: 500, label: '10% off' },
+    AURA10: { code: 'NIVARA10', rate: 0.1, maxDiscount: 500, label: '10% off' },
+    LILAC10: { code: 'NIVARA10', rate: 0.1, maxDiscount: 500, label: '10% off' },
     WELCOME15: { code: 'WELCOME15', rate: 0.15, maxDiscount: 750, label: '15% off' },
   }
-  if (!coupons[normalized]) return { ok: false, message: 'That coupon is not valid. Try LILAC10.' }
+  if (!coupons[normalized]) return { ok: false, message: 'That coupon is not valid. Try NIVARA10.' }
   state.coupon = coupons[normalized]
   notify(`${state.coupon.code} applied`)
   return { ok: true, message: `${state.coupon.label} applied to your order.` }

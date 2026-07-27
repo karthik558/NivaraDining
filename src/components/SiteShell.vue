@@ -16,6 +16,7 @@ const router = useRouter()
 const mobileOpen = ref(false)
 const search = ref('')
 const showBackToTop = ref(false)
+const logoStyle = ref('monogram') // Concept 3 Monogram N Emblem
 
 const submitSearch = () => {
   state.search = search.value.trim()
@@ -80,8 +81,8 @@ onBeforeUnmount(() => {
           <button class="icon-button xl:hidden" type="button" aria-label="Open navigation" aria-controls="mobile-navigation" :aria-expanded="mobileOpen" @click="mobileOpen = true">
             <Menu :size="20" />
           </button>
-          <RouterLink to="/" class="mx-auto shrink-0 sm:mx-0" aria-label="Lilac Hotels home">
-            <img class="h-12 w-25 object-contain sm:h-14 sm:w-28 lg:h-18 lg:w-40" src="/assets/img/logo/logo.png" alt="Lilac Hotels" />
+          <RouterLink to="/" class="mx-auto shrink-0 sm:mx-0" aria-label="Nivara Hotels home">
+            <img src="/assets/img/logo/logo-transparent.png" alt="Nivara Hotels" class="h-14 sm:h-16 lg:h-18 max-h-20 w-auto object-contain shrink-0 hover:opacity-90 transition-opacity" />
           </RouterLink>
 
           <nav class="mx-4 hidden shrink-0 items-center gap-1 rounded-xl border border-line bg-canvas p-1.5 text-sm font-semibold xl:flex" aria-label="Primary">
@@ -124,8 +125,8 @@ onBeforeUnmount(() => {
       <div v-if="mobileOpen" class="fixed inset-0 z-50 bg-ink/50 backdrop-blur-sm" @click.self="closeMobileNav">
         <aside id="mobile-navigation" class="mobile-nav-panel flex h-full w-[min(88vw,380px)] flex-col overflow-y-auto bg-white shadow-2xl" role="dialog" aria-modal="true" aria-label="Main navigation">
           <div class="flex items-center justify-between border-b border-line px-5 py-3">
-            <RouterLink to="/" aria-label="Lilac Hotels home">
-              <img class="h-13 w-27 object-contain object-left" src="/assets/img/logo/logo.png" alt="Lilac Hotels" />
+            <RouterLink to="/" aria-label="Nivara Hotels home">
+              <img src="/assets/img/logo/logo-transparent.png" alt="Nivara Hotels" class="h-12 sm:h-14 max-h-14 w-auto object-contain shrink-0" />
             </RouterLink>
             <button class="icon-button" type="button" aria-label="Close navigation" @click="closeMobileNav"><X :size="19" /></button>
           </div>
@@ -169,7 +170,7 @@ onBeforeUnmount(() => {
       <div class="page-shell relative z-10">
         <div class="overflow-hidden rounded-xl bg-lilac shadow-[0_24px_70px_rgba(48,16,44,.3)]">
           <div class="grid items-center gap-7 px-6 py-8 sm:px-9 lg:grid-cols-[1fr_auto] lg:px-12 lg:py-10">
-            <div><p class="text-xs font-bold tracking-[.18em] text-white/60 uppercase">Dining at Lilac</p><h2 class="mt-2 text-3xl font-semibold tracking-[-.035em] sm:text-4xl">Ready whenever you are.</h2><p class="mt-2 text-white/65">Explore the full menu or speak with our dining team.</p></div>
+            <div><p class="text-xs font-bold tracking-[.18em] text-white/60 uppercase">Dining at Nivara</p><h2 class="mt-2 text-3xl font-semibold tracking-[-.035em] sm:text-4xl">Ready whenever you are.</h2><p class="mt-2 text-white/65">Explore the full menu or speak with our dining team.</p></div>
             <div class="flex flex-wrap gap-3">
               <RouterLink class="inline-flex min-h-12 items-center gap-2 rounded-lg bg-white px-6 font-semibold text-lilac hover:-translate-y-0.5 hover:bg-lilac-soft" to="/product">View dining menu <ArrowRight :size="17" /></RouterLink>
               <a class="inline-flex min-h-12 items-center gap-2 rounded-lg border border-white/20 px-5 font-semibold text-white hover:bg-white/10" href="tel:08065551244"><Phone :size="17" /> Call dining</a>
@@ -180,12 +181,14 @@ onBeforeUnmount(() => {
 
       <div class="page-shell grid gap-10 pt-16 pb-12 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8 lg:pt-20">
         <div class="sm:col-span-2 lg:col-span-4">
-          <img class="h-24 w-42 object-contain object-left" src="/assets/img/logo/logo-white.png" alt="Lilac Hotels" />
+          <RouterLink to="/" aria-label="Nivara Hotels home" class="inline-block">
+            <img src="/assets/img/logo/logo-white.png" alt="Nivara Hotels" class="h-16 sm:h-20 lg:h-22 max-h-24 w-auto object-contain shrink-0" />
+          </RouterLink>
           <p class="mt-5 max-w-sm leading-7 text-white/55">Thoughtful stays, warm hospitality, and food prepared to make your room feel a little more like your own.</p>
           <div class="mt-7 flex gap-2">
-            <a class="footer-social" href="https://www.instagram.com/lilachotels/" target="_blank" rel="noreferrer" aria-label="Lilac Hotels on Instagram"><FontAwesomeIcon :icon="faInstagram" /></a>
-            <a class="footer-social" href="https://www.facebook.com/LilacHotels/" target="_blank" rel="noreferrer" aria-label="Lilac Hotels on Facebook"><FontAwesomeIcon :icon="faFacebookF" /></a>
-            <a class="footer-social" href="https://www.linkedin.com/company/tamara-leisure-experiences/" target="_blank" rel="noreferrer" aria-label="Tamara Leisure Experiences on LinkedIn"><FontAwesomeIcon :icon="faLinkedinIn" /></a>
+            <a class="footer-social" href="https://www.instagram.com/nivarahotels/" target="_blank" rel="noreferrer" aria-label="Nivara Hotels on Instagram"><FontAwesomeIcon :icon="faInstagram" /></a>
+            <a class="footer-social" href="https://www.facebook.com/NivaraHotels/" target="_blank" rel="noreferrer" aria-label="Nivara Hotels on Facebook"><FontAwesomeIcon :icon="faFacebookF" /></a>
+            <a class="footer-social" href="https://www.linkedin.com/company/nivara-leisure-experiences/" target="_blank" rel="noreferrer" aria-label="Nivara Leisure Experiences on LinkedIn"><FontAwesomeIcon :icon="faLinkedinIn" /></a>
           </div>
         </div>
 
@@ -200,9 +203,9 @@ onBeforeUnmount(() => {
         </div>
 
         <div class="lg:col-span-2">
-          <h2 class="text-sm font-semibold tracking-wide">Lilac stays</h2>
+          <h2 class="text-sm font-semibold tracking-wide">Nivara stays</h2>
           <div class="mt-5 grid gap-3.5 text-sm text-white/50">
-            <span>Lilac Guruvayur</span><span>Lilac Kumbakonam</span><span>O by Tamara</span><span>The Tamara</span>
+            <span>Nivara Palace, Udaipur</span><span>Nivara Haveli, Jaipur</span><span>Nivara Dunes, Jaisalmer</span><span>Nivara Fort, Jodhpur</span>
           </div>
         </div>
 
@@ -210,7 +213,7 @@ onBeforeUnmount(() => {
           <h2 class="text-sm font-semibold tracking-wide">Guest assistance</h2>
           <div class="mt-5 grid gap-4 text-sm">
             <a class="flex items-center gap-3 text-white/55 hover:text-white" href="tel:08065551244"><span class="grid size-9 place-items-center rounded-full bg-white/7 text-white"><Phone :size="15" /></span><span><small class="block text-white/35">Call us</small>080 6555 1244</span></a>
-            <a class="flex items-center gap-3 text-white/55 hover:text-white" href="mailto:reservations@lilachotels.com"><span class="grid size-9 place-items-center rounded-full bg-white/7 text-white"><Mail :size="15" /></span><span class="min-w-0"><small class="block text-white/35">Email</small><span class="break-all">reservations@lilachotels.com</span></span></a>
+            <a class="flex items-center gap-3 text-white/55 hover:text-white" href="mailto:reservations@nivarahotels.com"><span class="grid size-9 place-items-center rounded-full bg-white/7 text-white"><Mail :size="15" /></span><span class="min-w-0"><small class="block text-white/35">Email</small><span class="break-all">reservations@nivarahotels.com</span></span></a>
             <div class="flex items-center gap-3 text-white/55"><span class="grid size-9 place-items-center rounded-full bg-white/7 text-white"><Clock3 :size="15" /></span><span><small class="block text-white/35">Dining hours</small>7:30 AM–10:30 PM</span></div>
           </div>
         </div>
@@ -218,7 +221,7 @@ onBeforeUnmount(() => {
 
       <div class="border-t border-white/8">
         <div class="page-shell flex flex-col gap-3 py-5 text-xs text-white/35 sm:flex-row sm:items-center sm:justify-between">
-          <span>© {{ new Date().getFullYear() }} Lilac Hotels. All rights reserved.</span>
+          <span>© {{ new Date().getFullYear() }} Nivara Hotels. All rights reserved.</span>
           <div class="flex gap-5"><a class="hover:text-white" href="https://lilachotels.com/privacy/" target="_blank" rel="noreferrer">Privacy</a><RouterLink class="hover:text-white" to="/contact">Contacts</RouterLink></div>
         </div>
       </div>

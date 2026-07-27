@@ -42,7 +42,7 @@ const clearCoupon = () => {
             <div class="flex min-w-0 flex-col">
               <div class="flex justify-between gap-3">
                 <div>
-                  <p class="text-xs font-bold tracking-[.14em] text-lilac uppercase">Lilac kitchen</p>
+                  <p class="text-xs font-bold tracking-[.14em] text-lilac uppercase">Nivara kitchen</p>
                   <h2 class="mt-1 font-semibold sm:text-lg">{{ item.title }}</h2>
                   <p class="mt-1 text-sm text-muted">₹{{ item.price.max.toFixed(2) }} per item</p>
                 </div>
@@ -75,7 +75,7 @@ const clearCoupon = () => {
               <button class="secondary-button shrink-0 bg-white!" type="submit">Apply coupon</button>
             </form>
             <p v-if="couponMessage" class="mt-3 text-sm font-medium" :class="couponError ? 'text-red-700' : 'text-green-700'">{{ couponMessage }}</p>
-            <p v-else-if="!state.coupon" class="mt-3 text-xs text-muted">Try <strong>LILAC10</strong> for 10% off, up to ₹500.</p>
+            <p v-else-if="!state.coupon" class="mt-3 text-xs text-muted">Try <strong>NIVARA10</strong> for 10% off, up to ₹500.</p>
           </div>
         </div>
 

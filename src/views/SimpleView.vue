@@ -37,7 +37,7 @@ const signIn = () => {
 
   <template v-else-if="page === 'contact'">
     <section class="relative min-h-162.5 overflow-hidden bg-[#211a20] text-white lg:min-h-180">
-      <img class="absolute inset-0 h-full w-full object-cover object-center lg:object-right" src="/assets/img/product/ai/ai-product-23.jpg" alt="Lilac Hotels guest assistance" />
+      <img class="absolute inset-0 h-full w-full object-cover object-center lg:object-right" src="/assets/img/product/ai/ai-product-23.jpg" alt="Velora Hotels guest assistance" />
       <div class="absolute inset-0 bg-linear-to-r from-[#211a20] via-[#211a20]/90 to-[#211a20]/18"></div>
       <div class="absolute inset-0 bg-[radial-gradient(circle_at_15%_10%,rgba(120,38,113,.7),transparent_38%)]"></div>
       <div class="page-shell relative flex min-h-162.5 items-center py-16 lg:min-h-180">
@@ -47,7 +47,7 @@ const signIn = () => {
           <p class="mt-7 max-w-xl text-lg leading-8 text-white/65">Whether you need help choosing a dish, have a dietary request, or simply want to speak with someone, our team is close by.</p>
           <div class="mt-9 flex flex-wrap gap-3">
             <a class="inline-flex min-h-13 items-center gap-2 rounded-lg bg-white px-6 font-semibold text-lilac hover:-translate-y-0.5" href="tel:08065551244"><Phone :size="17" /> Call guest assistance</a>
-            <a class="inline-flex min-h-13 items-center gap-2 rounded-lg border border-white/20 px-6 font-semibold text-white hover:bg-white/10" href="mailto:reservations@lilachotels.com"><Mail :size="17" /> Send an email</a>
+            <a class="inline-flex min-h-13 items-center gap-2 rounded-lg border border-white/20 px-6 font-semibold text-white hover:bg-white/10" href="mailto:reservations@velorahotels.com"><Mail :size="17" /> Send an email</a>
           </div>
         </div>
       </div>
@@ -75,7 +75,7 @@ const signIn = () => {
           <p class="mt-5 max-w-md leading-7 text-muted">Share as much or as little as you like. For immediate dining assistance, calling the team will always be the quickest option.</p>
           <div class="mt-9 space-y-5 border-t border-line pt-7">
             <div class="flex gap-4"><span class="grid size-10 shrink-0 place-items-center rounded-full bg-lilac-soft text-lilac"><ConciergeBell :size="18" /></span><div><strong>In-room dining</strong><p class="mt-1 text-sm leading-6 text-muted">Menu guidance, allergens, modifications, and order updates.</p></div></div>
-            <div class="flex gap-4"><span class="grid size-10 shrink-0 place-items-center rounded-full bg-lilac-soft text-lilac"><MapPin :size="18" /></span><div><strong>During your stay</strong><p class="mt-1 text-sm leading-6 text-muted">Room-side assistance coordinated with the Lilac team.</p></div></div>
+            <div class="flex gap-4"><span class="grid size-10 shrink-0 place-items-center rounded-full bg-lilac-soft text-lilac"><MapPin :size="18" /></span><div><strong>During your stay</strong><p class="mt-1 text-sm leading-6 text-muted">Room-side assistance coordinated with the Velora team.</p></div></div>
           </div>
         </div>
 
@@ -121,7 +121,7 @@ const signIn = () => {
       <div class="page-shell relative">
         <div class="mx-auto grid max-w-275 overflow-hidden rounded-lg border border-line bg-white shadow-[0_28px_80px_rgba(41,26,38,.12)] lg:min-h-160 lg:grid-cols-[.9fr_1.1fr]">
           <div class="relative min-h-60 overflow-hidden bg-ink sm:min-h-80 lg:min-h-full">
-            <img class="absolute inset-0 h-full w-full object-cover" src="/assets/img/product/ai/ai-product-38.jpg" alt="Lilac Hotels dining service" />
+            <img class="absolute inset-0 h-full w-full object-cover" src="/assets/img/product/ai/ai-product-38.jpg" alt="Velora Hotels dining service" />
             <div class="absolute inset-0 bg-linear-to-t from-ink/25 to-transparent lg:bg-linear-to-r"></div>
           </div>
 

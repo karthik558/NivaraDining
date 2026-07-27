@@ -10,7 +10,7 @@ import {
 
 const submitted = ref(false)
 const formRef = ref(null)
-const orderNumber = `LILAC-${Date.now().toString().slice(-8)}`
+const orderNumber = `NIVARA-${Date.now().toString().slice(-8)}`
 const form = reactive({
   firstName: '',
   lastName: '',
@@ -34,7 +34,7 @@ const generateInvoice = async () => {
   doc.setTextColor(255, 255, 255)
   doc.setFont('helvetica', 'bold')
   doc.setFontSize(22)
-  doc.text('LILAC HOTELS', left, 19)
+  doc.text('NIVARA HOTELS', left, 19)
   doc.setFont('helvetica', 'normal')
   doc.setFontSize(10)
   doc.text('In-room dining invoice', left, 28)
@@ -115,7 +115,7 @@ const generateInvoice = async () => {
   doc.setFont('helvetica', 'normal')
   doc.setFontSize(9)
   doc.setTextColor(113, 107, 112)
-  doc.text('Thank you for dining with Lilac Hotels.', left, 286)
+  doc.text('Thank you for dining with Nivara Hotels.', left, 286)
   doc.text('Dining assistance: 080 6555 1244', right, 286, { align: 'right' })
   doc.save(`${orderNumber}-invoice.pdf`)
 }
@@ -130,7 +130,7 @@ const placeOrder = async () => {
   await generateInvoice()
   const items = state.cart.map((item) => `${item.title} x ${item.qty} - Rs.${(item.qty * item.price.max).toFixed(2)}`).join('\n')
   const message = encodeURIComponent(
-    `Lilac in-room dining order ${orderNumber}\n\nGuest: ${form.firstName} ${form.lastName}\nRoom: ${form.roomNumber}\nPhone: ${form.phoneNumber}\n\n${items}\n\nSubtotal: Rs.${cartSubtotal.value.toFixed(2)}\nCoupon: ${state.coupon?.code || 'None'}\nGST (18%): Rs.${cartTax.value.toFixed(2)}\nTotal: Rs.${cartTotal.value.toFixed(2)}\nSpecial request: ${form.specialRequest || 'None'}`,
+    `Nivara in-room dining order ${orderNumber}\n\nGuest: ${form.firstName} ${form.lastName}\nRoom: ${form.roomNumber}\nPhone: ${form.phoneNumber}\n\n${items}\n\nSubtotal: Rs.${cartSubtotal.value.toFixed(2)}\nCoupon: ${state.coupon?.code || 'None'}\nGST (18%): Rs.${cartTax.value.toFixed(2)}\nTotal: Rs.${cartTotal.value.toFixed(2)}\nSpecial request: ${form.specialRequest || 'None'}`,
   )
   submitted.value = true
   window.open(`https://wa.me/8129624036?text=${message}`, '_blank', 'noopener,noreferrer')

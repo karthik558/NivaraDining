@@ -18,7 +18,7 @@ const heroSlides = [
   {
     eyebrow: 'The art of staying in',
     title: 'Your room. Your table. Your moment.',
-    copy: 'A considered in-room dining experience—freshly prepared, beautifully presented, and delivered with the quiet warmth of Lilac.',
+    copy: 'A considered in-room dining experience—freshly prepared, beautifully presented, and delivered with the quiet warmth of Nivara.',
     image: '/assets/img/product/ai/ai-product-28.jpg',
     dish: 'Vegetable Biryani',
     note: 'Aromatic · Slow cooked',
@@ -178,7 +178,7 @@ onBeforeUnmount(() => window.clearInterval(heroTimer))
 
       <div class="relative z-30 grid border-t border-white/10 bg-ink text-white sm:grid-cols-3">
         <div v-for="(item, index) in [
-          { icon: ChefHat, title: 'Made to order', copy: 'Fresh from the Lilac kitchen' },
+          { icon: ChefHat, title: 'Made to order', copy: 'Fresh from the Nivara kitchen' },
           { icon: Clock3, title: 'All-day ease', copy: '7:30 AM–10:30 PM, every day' },
           { icon: ConciergeBell, title: 'Room-side service', copy: 'Delivered with thoughtful care' }
         ]" :key="item.title" class="flex items-center gap-3 px-5 py-4 sm:justify-center sm:px-5 lg:py-5" :class="{ 'border-t border-white/8 sm:border-t-0 sm:border-l': index }">
@@ -248,7 +248,7 @@ onBeforeUnmount(() => window.clearInterval(heroTimer))
     <div class="page-shell relative">
       <div class="grid items-center gap-10 lg:grid-cols-[.88fr_1.12fr] lg:gap-14">
         <div>
-          <div class="flex items-center gap-3"><span class="h-px w-9 bg-white/35"></span><p class="text-xs font-bold tracking-[.2em] text-white/65 uppercase">The Lilac table</p></div>
+          <div class="flex items-center gap-3"><span class="h-px w-9 bg-white/35"></span><p class="text-xs font-bold tracking-[.2em] text-white/65 uppercase">The Nivara table</p></div>
           <h2 class="mt-5 text-4xl leading-[1.04] font-semibold tracking-tighter md:text-5xl lg:text-[3.5rem]">Comforting food, made with thoughtful details.</h2>
           <p class="mt-6 max-w-lg text-lg leading-8 text-white/68">Every tray is considered as a whole—from flavour and freshness to the moment it arrives at your door.</p>
           <div class="mt-8 grid max-w-lg grid-cols-1 gap-3 min-[400px]:grid-cols-2">
@@ -333,7 +333,7 @@ onBeforeUnmount(() => window.clearInterval(heroTimer))
   </section>
 
   <section class="relative flex min-h-130 items-center overflow-hidden bg-[#211a20] text-white lg:h-147.5 lg:min-h-0">
-    <img class="absolute inset-0 h-full w-full object-cover" src="/assets/img/product/ai/ai-product-26.jpg" alt="Paneer butter masala prepared by Lilac Hotels" />
+    <img class="absolute inset-0 h-full w-full object-cover" src="/assets/img/product/ai/ai-product-26.jpg" alt="Paneer butter masala prepared by Nivara Hotels" />
     <div class="absolute inset-0 bg-linear-to-r from-[#211a20] via-[#211a20]/85 to-[#211a20]/12"></div>
     <div class="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(120,38,113,.7),transparent_35%)]"></div>
     <div class="page-shell relative py-12">
