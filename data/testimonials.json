@@ -41,5 +41,61 @@
         "text": "“An excellent hotel.. I would say The best in Guruvayoor.. Well appointed rooms catering to different guest.. Even a family of 6 could be accomodated on the large room with extra bed option...Has appointed with all amenties required for a luxury hotel, though Guruvayoor visiting guests prime focus is temple..”",
         "name": "Dinesh L",
         "title": "Lilac Guruvayur"
+    },
+    {
+        "id": 7,
+        "icon": "/assets/img/svg/testi02.svg",
+        "text": "“The in-room dining arrived warm, beautifully presented, and exactly when promised. The filter coffee and breakfast made our morning feel effortless.”",
+        "name": "Meera Nair",
+        "title": "In-room dining guest"
+    },
+    {
+        "id": 8,
+        "icon": "/assets/img/svg/testi02.svg",
+        "text": "“A thoughtfully curated vegetarian menu with enough choice for our whole family. The paneer tikka and biryani were particular favourites.”",
+        "name": "Rahul Menon",
+        "title": "Family stay"
+    },
+    {
+        "id": 9,
+        "icon": "/assets/img/svg/testi02.svg",
+        "text": "“Ordering was simple and the team was very attentive to our dietary preferences. Everything felt polished, personal, and genuinely hospitable.”",
+        "name": "Ananya Rao",
+        "title": "Weekend guest"
+    },
+    {
+        "id": 10,
+        "icon": "/assets/img/svg/testi02.svg",
+        "text": "“The South Indian thali was comforting and generous without feeling heavy. A lovely meal after a long day of travel.”",
+        "name": "Vikram Iyer",
+        "title": "Business traveller"
+    },
+    {
+        "id": 11,
+        "icon": "/assets/img/svg/testi02.svg",
+        "text": "“We appreciated the fresh ingredients, clear menu, and careful packaging. The food felt restaurant-quality even in the room.”",
+        "name": "Priya Krishnan",
+        "title": "Lilac guest"
+    },
+    {
+        "id": 12,
+        "icon": "/assets/img/svg/testi02.svg",
+        "text": "“From the first call to the final delivery, the service was warm and professional. The team made a late family dinner completely stress-free.”",
+        "name": "Arjun S.",
+        "title": "Family stay"
+    },
+    {
+        "id": 13,
+        "icon": "/assets/img/svg/testi02.svg",
+        "text": "“The menu balances familiar comfort food with lighter choices really well. Our salad, pasta, and dessert were all excellent.”",
+        "name": "Neha Thomas",
+        "title": "Leisure guest"
+    },
+    {
+        "id": 14,
+        "icon": "/assets/img/svg/testi02.svg",
+        "text": "“Breakfast arrived right on time and the appam with vegetable stew was memorable. Exactly the calm start we wanted.”",
+        "name": "Sanjay Pillai",
+        "title": "Morning dining guest"
     }
 ]
