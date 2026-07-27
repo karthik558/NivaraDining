@@ -99,7 +99,7 @@ const clearCoupon = () => {
       </div>
 
       <div v-else class="surface grid min-h-96 place-items-center p-8 text-center">
-        <div><span class="mx-auto grid size-16 place-items-center rounded-full bg-lilac-soft text-lilac"><ShoppingBag :size="28" /></span><h2 class="mt-5 text-2xl font-semibold">Your cart is empty</h2><p class="mt-2 text-muted">Your next favourite dish is waiting.</p><RouterLink class="primary-button mt-6" to="/product">Explore the menu</RouterLink></div>
+        <div><span class="mx-auto grid size-16 place-items-center rounded-lg bg-lilac-soft text-lilac"><ShoppingBag :size="28" /></span><h2 class="mt-5 text-2xl font-semibold">Your cart is empty</h2><p class="mt-2 text-muted">Your next favourite dish is waiting.</p><RouterLink class="primary-button mt-6" to="/product">Explore the menu</RouterLink></div>
       </div>
     </div>
   </section>

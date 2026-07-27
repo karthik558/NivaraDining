@@ -42,8 +42,8 @@ const signIn = () => {
           <h1 class="mt-6 text-[clamp(3.7rem,8vw,7.2rem)] leading-[.9] font-semibold tracking-[-.07em]">We’re here<br />for your stay.</h1>
           <p class="mt-7 max-w-xl text-lg leading-8 text-white/65">Whether you need help choosing a dish, have a dietary request, or simply want to speak with someone, our team is close by.</p>
           <div class="mt-9 flex flex-wrap gap-3">
-            <a class="inline-flex min-h-13 items-center gap-2 rounded-full bg-white px-6 font-semibold text-lilac hover:-translate-y-0.5" href="tel:08065551244"><Phone :size="17" /> Call guest assistance</a>
-            <a class="inline-flex min-h-13 items-center gap-2 rounded-full border border-white/20 px-6 font-semibold text-white hover:bg-white/10" href="mailto:reservations@lilachotels.com"><Mail :size="17" /> Send an email</a>
+            <a class="inline-flex min-h-13 items-center gap-2 rounded-lg bg-white px-6 font-semibold text-lilac hover:-translate-y-0.5" href="tel:08065551244"><Phone :size="17" /> Call guest assistance</a>
+            <a class="inline-flex min-h-13 items-center gap-2 rounded-lg border border-white/20 px-6 font-semibold text-white hover:bg-white/10" href="mailto:reservations@lilachotels.com"><Mail :size="17" /> Send an email</a>
           </div>
         </div>
       </div>
@@ -75,7 +75,7 @@ const signIn = () => {
           </div>
         </div>
 
-        <form class="relative overflow-hidden rounded-[28px] border border-line bg-white p-6 shadow-card sm:p-9" @submit.prevent="sent = true">
+        <form class="relative overflow-hidden rounded-xl border border-line bg-white p-6 shadow-card sm:p-9" @submit.prevent="sent = true">
           <div class="absolute top-0 right-0 size-40 rounded-bl-full bg-lilac-soft"></div>
           <div class="relative">
             <p class="eyebrow">Send a note</p><h2 class="mt-2 text-3xl font-semibold tracking-[-.035em]">How can we help?</h2>

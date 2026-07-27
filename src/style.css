@@ -11,6 +11,11 @@
   --color-warm: #f5eee4;
   --font-sans: "Jost", "Avenir Next", "Segoe UI", sans-serif;
   --shadow-card: 0 12px 36px rgba(41, 26, 38, 0.08);
+  --radius-md: 0.625rem;
+  --radius-lg: 0.625rem;
+  --radius-xl: 0.625rem;
+  --radius-2xl: 0.625rem;
+  --radius-3xl: 0.625rem;
 }
 
 @layer base {
@@ -68,11 +73,11 @@
   }
 
   .primary-button {
-    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-lilac px-6 font-semibold text-white hover:-translate-y-0.5 hover:bg-lilac-dark;
+    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-lilac px-6 font-semibold text-white hover:-translate-y-0.5 hover:bg-lilac-dark;
   }
 
   .secondary-button {
-    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-line bg-white px-6 font-semibold text-ink hover:-translate-y-0.5 hover:border-lilac/40 hover:text-lilac;
+    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-lg border border-line bg-white px-6 font-semibold text-ink hover:-translate-y-0.5 hover:border-lilac/40 hover:text-lilac;
   }
 
   .icon-button {
@@ -80,7 +85,7 @@
   }
 
   .desktop-nav-link {
-    @apply inline-flex min-h-11 shrink-0 items-center justify-center rounded-full px-6 py-2.5 text-muted hover:bg-lilac-soft hover:text-lilac;
+    @apply inline-flex min-h-11 shrink-0 items-center justify-center rounded-lg px-6 py-2.5 text-muted hover:bg-lilac-soft hover:text-lilac;
   }
 
   .desktop-nav-link.router-link-exact-active {
@@ -100,7 +105,7 @@
   }
 
   .surface {
-    @apply rounded-2xl border border-line bg-white;
+    @apply rounded-lg border border-line bg-white;
   }
 
   .field {

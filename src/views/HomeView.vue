@@ -126,10 +126,10 @@ onBeforeUnmount(() => window.clearInterval(heroTimer))
           </Transition>
 
           <div class="mt-9 flex flex-wrap gap-3">
-            <RouterLink class="inline-flex min-h-13 items-center gap-2 rounded-full bg-white px-6 font-semibold text-lilac hover:-translate-y-0.5 hover:bg-lilac-soft" :to="{ path: '/product', hash: '#menu-results' }">
+            <RouterLink class="inline-flex min-h-13 items-center gap-2 rounded-lg bg-white px-6 font-semibold text-lilac hover:-translate-y-0.5 hover:bg-lilac-soft" :to="{ path: '/product', hash: '#menu-results' }">
               Explore the menu <ArrowRight :size="18" />
             </RouterLink>
-            <button class="inline-flex min-h-13 items-center gap-2 rounded-full border border-white/18 px-5 font-semibold text-white hover:bg-white/8" @click="heroPaused = !heroPaused">
+            <button class="inline-flex min-h-13 items-center gap-2 rounded-lg border border-white/18 px-5 font-semibold text-white hover:bg-white/8" @click="heroPaused = !heroPaused">
               <Pause v-if="!heroPaused" :size="17" /><Play v-else :size="17" />
               {{ heroPaused ? 'Play story' : 'Pause story' }}
             </button>
@@ -158,7 +158,7 @@ onBeforeUnmount(() => window.clearInterval(heroTimer))
             <img :key="currentHero.image" class="absolute inset-0 h-full w-full object-cover" :src="currentHero.image" :alt="currentHero.dish" />
           </Transition>
           <div class="absolute inset-0 bg-gradient-to-t from-[#241d23] via-transparent to-transparent lg:bg-gradient-to-r lg:from-[#241d23] lg:via-[#241d23]/5 lg:to-transparent"></div>
-          <div class="absolute right-5 bottom-6 left-5 flex min-h-20 items-center gap-4 rounded-2xl border border-white/20 bg-white/92 p-4 text-ink shadow-2xl backdrop-blur-xl sm:right-8 sm:left-auto sm:w-72 lg:right-10 lg:bottom-8">
+          <div class="absolute right-5 bottom-6 left-5 flex min-h-20 items-center gap-4 rounded-lg border border-white/20 bg-white/92 p-4 text-ink shadow-2xl backdrop-blur-xl sm:right-8 sm:left-auto sm:w-72 lg:right-10 lg:bottom-8">
             <span class="grid size-12 shrink-0 place-items-center rounded-full bg-lilac text-white"><ChefHat :size="21" /></span>
             <div class="min-w-0"><strong class="block truncate">{{ currentHero.dish }}</strong><small class="mt-0.5 block text-muted">{{ currentHero.note }}</small></div>
           </div>
@@ -193,7 +193,7 @@ onBeforeUnmount(() => window.clearInterval(heroTimer))
         <button
           v-for="category in categoryTabs"
           :key="category.label"
-          class="flex shrink-0 items-center gap-3 rounded-full border border-line bg-white py-2 pr-5 pl-2 text-sm font-semibold hover:border-lilac/30"
+          class="flex shrink-0 items-center gap-3 rounded-lg border border-line bg-white py-2 pr-5 pl-2 text-sm font-semibold hover:border-lilac/30"
           :class="{ 'border-lilac! bg-lilac! text-white!': menuCategory === category.label }"
           @click="menuCategory = category.label"
         >
@@ -212,11 +212,11 @@ onBeforeUnmount(() => window.clearInterval(heroTimer))
   <section class="pb-14 md:pb-20 lg:pb-24">
     <div class="page-shell">
       <div class="grid gap-5 lg:grid-cols-[1.12fr_.88fr]">
-        <RouterLink to="/product" class="editorial-card group relative min-h-[490px] overflow-hidden rounded-[30px] bg-ink">
+        <RouterLink to="/product" class="editorial-card group relative min-h-[490px] overflow-hidden rounded-xl bg-ink">
           <img class="absolute inset-0 h-full w-full object-cover opacity-90 duration-700 group-hover:scale-105" src="/assets/img/product/ai/ai-product-38.jpg" alt="South Indian thali" />
           <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/5 to-transparent"></div>
           <div class="absolute right-0 bottom-0 left-0 p-7 text-white sm:p-10">
-            <span class="inline-flex items-center gap-2 rounded-full bg-white/12 px-3 py-1.5 text-xs font-semibold backdrop-blur">Regional table</span>
+            <span class="inline-flex items-center gap-2 rounded-lg bg-white/12 px-3 py-1.5 text-xs font-semibold backdrop-blur">Regional table</span>
             <h2 class="mt-4 text-4xl font-semibold tracking-[-.045em] sm:text-5xl">A generous taste of the South.</h2>
             <span class="mt-6 inline-flex items-center gap-2 font-semibold">Discover local favourites <ArrowRight :size="18" /></span>
           </div>
@@ -225,7 +225,7 @@ onBeforeUnmount(() => window.clearInterval(heroTimer))
           <RouterLink v-for="feature in [
             { title: 'Bright. Fresh. Balanced.', eyebrow: 'A lighter table', image: '/assets/img/product/ai/ai-product-12.jpg' },
             { title: 'Finish beautifully.', eyebrow: 'A little indulgence', image: '/assets/img/product/ai/ai-product-44.jpg' }
-          ]" :key="feature.title" to="/product" class="editorial-card group relative min-h-58 overflow-hidden rounded-[30px] bg-ink">
+          ]" :key="feature.title" to="/product" class="editorial-card group relative min-h-58 overflow-hidden rounded-xl bg-ink">
             <img class="absolute inset-0 h-full w-full object-cover opacity-85 duration-700 group-hover:scale-105" :src="feature.image" :alt="feature.title" />
             <div class="absolute inset-0 bg-gradient-to-r from-ink/85 via-ink/25 to-transparent"></div>
             <div class="absolute inset-y-0 left-0 flex max-w-sm flex-col justify-center p-7 text-white"><p class="text-xs font-bold tracking-[.16em] text-white/65 uppercase">{{ feature.eyebrow }}</p><h3 class="mt-3 text-3xl leading-tight font-semibold tracking-[-.03em]">{{ feature.title }}</h3><ArrowRight class="mt-5" :size="19" /></div>
@@ -257,12 +257,12 @@ onBeforeUnmount(() => window.clearInterval(heroTimer))
           </div>
           <p class="mt-8 text-xs font-bold tracking-[.16em] text-white/50 uppercase">Choose your dining mood</p>
           <div class="mt-8 flex flex-wrap gap-2">
-            <button v-for="(_, key) in trayOptions" :key="key" class="rounded-full border border-white/18 px-4 py-2.5 text-sm font-semibold capitalize hover:bg-white/10" :class="{ 'bg-white! text-lilac!': trayType === key }" @click="trayType = key">{{ key }}</button>
+            <button v-for="(_, key) in trayOptions" :key="key" class="rounded-lg border border-white/18 px-4 py-2.5 text-sm font-semibold capitalize hover:bg-white/10" :class="{ 'bg-white! text-lilac!': trayType === key }" @click="trayType = key">{{ key }}</button>
           </div>
         </div>
 
         <Transition name="fade" mode="out-in">
-          <div :key="trayType" class="relative overflow-hidden rounded-[30px] bg-white p-4 text-ink shadow-[0_30px_80px_rgba(40,16,37,.22)] sm:p-6">
+          <div :key="trayType" class="relative overflow-hidden rounded-xl bg-white p-4 text-ink shadow-[0_30px_80px_rgba(40,16,37,.22)] sm:p-6">
             <div class="absolute top-0 right-0 h-32 w-32 rounded-bl-full bg-lilac-soft"></div>
             <div class="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
               <div class="relative"><p class="text-xs font-bold tracking-[.16em] text-lilac uppercase">{{ activeTray.eyebrow }}</p><h3 class="mt-2 text-2xl font-semibold">{{ activeTray.title }}</h3><p class="mt-2 max-w-md text-sm text-muted">{{ activeTray.copy }}</p></div>
@@ -275,7 +275,7 @@ onBeforeUnmount(() => window.clearInterval(heroTimer))
                 <p class="mt-1 text-sm font-bold text-lilac">₹{{ product.price.max }}</p>
               </div>
             </div>
-            <button class="mt-5 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-lilac font-semibold text-white hover:-translate-y-0.5 hover:bg-lilac-dark" @click="addTray">
+            <button class="mt-5 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-lg bg-lilac font-semibold text-white hover:-translate-y-0.5 hover:bg-lilac-dark" @click="addTray">
               <Plus :size="18" /> Add the complete tray
             </button>
           </div>
@@ -286,7 +286,7 @@ onBeforeUnmount(() => window.clearInterval(heroTimer))
 
   <section class="section-space bg-canvas">
     <div class="page-shell">
-      <div class="overflow-hidden rounded-[32px] border border-line bg-white shadow-card lg:grid lg:grid-cols-[.78fr_1.22fr]">
+      <div class="overflow-hidden rounded-xl border border-line bg-white shadow-card lg:grid lg:grid-cols-[.78fr_1.22fr]">
         <div class="relative min-h-[390px] overflow-hidden bg-[#211a20] p-7 text-white sm:p-10 lg:min-h-[560px] lg:p-12">
           <div class="absolute -top-20 -right-20 size-72 rounded-full border border-white/8"></div>
           <div class="absolute right-10 bottom-10 size-44 overflow-hidden rounded-full border-8 border-white/8">
@@ -325,19 +325,19 @@ onBeforeUnmount(() => window.clearInterval(heroTimer))
     </div>
   </section>
 
-  <section class="relative flex min-h-[82svh] items-center overflow-hidden bg-[#211a20] text-white lg:min-h-screen">
+  <section class="relative flex min-h-[520px] items-center overflow-hidden bg-[#211a20] text-white lg:h-[590px] lg:min-h-0">
     <img class="absolute inset-0 h-full w-full object-cover" src="/assets/img/product/ai/ai-product-26.jpg" alt="Paneer butter masala prepared by Lilac Hotels" />
     <div class="absolute inset-0 bg-gradient-to-r from-[#211a20] via-[#211a20]/85 to-[#211a20]/12"></div>
     <div class="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(120,38,113,.7),transparent_35%)]"></div>
-    <div class="page-shell relative py-20">
+    <div class="page-shell relative py-12">
       <div class="max-w-3xl">
         <span class="inline-flex size-14 items-center justify-center rounded-full border border-white/18 bg-white/8 backdrop-blur"><UtensilsCrossed :size="24" /></span>
         <p class="mt-8 text-xs font-bold tracking-[.22em] text-white/55 uppercase">Your evening, beautifully considered</p>
-        <h2 class="mt-5 text-[clamp(3.4rem,8vw,7.5rem)] leading-[.9] font-semibold tracking-[-.07em]">Stay in.<br />Dine beautifully.</h2>
+        <h2 class="mt-5 text-[clamp(2.8rem,6vw,5.25rem)] leading-[.9] font-semibold tracking-[-.07em]">Stay in.<br />Dine beautifully.</h2>
         <p class="mt-7 max-w-xl text-lg leading-8 text-white/65 sm:text-xl">Seventy dishes, one thoughtfully designed menu, and the quiet luxury of having it brought to your room.</p>
         <div class="mt-9 flex flex-wrap gap-3">
-          <RouterLink class="inline-flex min-h-13 items-center gap-2 rounded-full bg-white px-7 font-semibold text-lilac hover:-translate-y-0.5 hover:bg-lilac-soft" to="/product">Open the dining menu <ArrowRight :size="18" /></RouterLink>
-          <a class="inline-flex min-h-13 items-center rounded-full border border-white/20 px-6 font-semibold text-white backdrop-blur hover:bg-white/10" href="tel:08065551244">Speak with dining</a>
+          <RouterLink class="inline-flex min-h-13 items-center gap-2 rounded-lg bg-white px-7 font-semibold text-lilac hover:-translate-y-0.5 hover:bg-lilac-soft" to="/product">Open the dining menu <ArrowRight :size="18" /></RouterLink>
+          <a class="inline-flex min-h-13 items-center rounded-lg border border-white/20 px-6 font-semibold text-white backdrop-blur hover:bg-white/10" href="tel:08065551244">Speak with dining</a>
         </div>
       </div>
       <div class="absolute right-8 bottom-8 hidden items-center gap-3 border-l border-white/20 pl-5 text-sm text-white/55 lg:flex"><Clock3 :size="18" /><span>Available daily<br /><strong class="text-white">7:30 AM–10:30 PM</strong></span></div>

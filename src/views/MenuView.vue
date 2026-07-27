@@ -132,8 +132,8 @@ onMounted(() => {
         <h1 class="mt-6 text-[clamp(3.2rem,7vw,6.7rem)] leading-[.9] font-semibold tracking-[-.07em]">A menu for<br />every mood.</h1>
         <p class="mt-7 max-w-xl text-lg leading-8 text-white/65">Thoughtfully prepared dishes—from unhurried breakfasts and regional favourites to lighter plates and beautiful endings.</p>
         <div class="mt-8 flex flex-wrap gap-3 text-sm">
-          <span class="inline-flex items-center gap-2 rounded-full border border-white/16 bg-white/7 px-4 py-2.5 backdrop-blur"><ChefHat :size="16" /> Made to order</span>
-          <span class="inline-flex items-center gap-2 rounded-full border border-white/16 bg-white/7 px-4 py-2.5 backdrop-blur"><Clock3 :size="16" /> 7:30 AM–10:30 PM</span>
+          <span class="inline-flex items-center gap-2 rounded-lg border border-white/16 bg-white/7 px-4 py-2.5 backdrop-blur"><ChefHat :size="16" /> Made to order</span>
+          <span class="inline-flex items-center gap-2 rounded-lg border border-white/16 bg-white/7 px-4 py-2.5 backdrop-blur"><Clock3 :size="16" /> 7:30 AM–10:30 PM</span>
         </div>
       </div>
     </div>
@@ -141,10 +141,10 @@ onMounted(() => {
 
   <section id="menu-results" class="scroll-mt-28 bg-canvas py-10 md:py-14 lg:py-16">
     <div class="page-shell">
-      <div class="mb-8 grid gap-4 rounded-3xl border border-line bg-white p-4 shadow-card md:grid-cols-[1fr_auto] md:items-center md:p-5">
+      <div class="mb-8 grid gap-4 rounded-xl border border-line bg-white p-4 shadow-card md:grid-cols-[1fr_auto] md:items-center md:p-5">
         <div class="relative">
           <Search class="absolute top-1/2 left-4 -translate-y-1/2 text-muted" :size="19" />
-          <input v-model="search" class="field min-h-13 rounded-full bg-canvas! pl-12" type="search" placeholder="Search dishes, categories, or flavours" />
+          <input v-model="search" class="field min-h-13 rounded-lg bg-canvas! pl-12" type="search" placeholder="Search dishes, categories, or flavours" />
         </div>
         <div class="flex gap-3">
           <button class="secondary-button flex-1 md:hidden" @click="filtersOpen = true"><SlidersHorizontal :size="18" /> Categories & price</button>
@@ -159,7 +159,7 @@ onMounted(() => {
 
       <div class="grid items-start gap-8 lg:grid-cols-[285px_1fr]">
         <aside :class="filtersOpen ? 'fixed inset-0 z-50 flex items-end bg-ink/45 backdrop-blur-sm lg:static lg:block lg:bg-transparent lg:backdrop-blur-none' : 'hidden lg:block'" @click.self="filtersOpen = false">
-          <div class="max-h-[88svh] w-full overflow-y-auto rounded-t-[28px] bg-white p-5 lg:sticky lg:top-5 lg:max-h-[calc(100svh-40px)] lg:rounded-3xl lg:border lg:border-line lg:p-6 lg:shadow-card">
+          <div class="max-h-[88svh] w-full overflow-y-auto rounded-t-xl bg-white p-5 lg:sticky lg:top-5 lg:max-h-[calc(100svh-40px)] lg:rounded-xl lg:border lg:border-line lg:p-6 lg:shadow-card">
             <div class="flex items-center justify-between">
               <div><p class="eyebrow">Browse by</p><h2 class="mt-1 text-2xl font-semibold">Category</h2></div>
               <button class="icon-button lg:hidden" aria-label="Close filters" @click="filtersOpen = false"><X :size="18" /></button>
@@ -225,7 +225,7 @@ onMounted(() => {
             <ProductCard v-for="product in filtered" :key="product.id" :product="product" />
           </div>
           <div v-else class="surface grid min-h-96 place-items-center p-8 text-center">
-            <div><span class="mx-auto grid size-14 place-items-center rounded-full bg-lilac-soft text-lilac"><Search :size="25" /></span><h2 class="mt-5 text-2xl font-semibold">Nothing matches just yet</h2><p class="mt-2 text-muted">Try another search, category, or price range.</p><button class="primary-button mt-6" @click="resetFilters">Show the full menu</button></div>
+            <div><span class="mx-auto grid size-14 place-items-center rounded-lg bg-lilac-soft text-lilac"><Search :size="25" /></span><h2 class="mt-5 text-2xl font-semibold">Nothing matches just yet</h2><p class="mt-2 text-muted">Try another search, category, or price range.</p><button class="primary-button mt-6" @click="resetFilters">Show the full menu</button></div>
           </div>
         </div>
       </div>

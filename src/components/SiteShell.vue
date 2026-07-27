@@ -69,16 +69,16 @@ onBeforeUnmount(() => {
             <img class="h-12 w-25 object-contain sm:h-14 sm:w-28 lg:h-18 lg:w-40" src="/assets/img/logo/logo.png" alt="Lilac Hotels" />
           </RouterLink>
 
-          <nav class="mx-4 hidden shrink-0 items-center gap-1 rounded-full border border-line bg-canvas p-1.5 text-sm font-semibold xl:flex" aria-label="Primary">
+          <nav class="mx-4 hidden shrink-0 items-center gap-1 rounded-xl border border-line bg-canvas p-1.5 text-sm font-semibold xl:flex" aria-label="Primary">
             <RouterLink to="/" class="desktop-nav-link">Home</RouterLink>
             <RouterLink to="/product" class="desktop-nav-link">Dining menu</RouterLink>
-            <RouterLink to="/contact" class="desktop-nav-link">Guest support</RouterLink>
+            <RouterLink to="/contact" class="desktop-nav-link">Contacts</RouterLink>
           </nav>
 
           <form class="relative ml-auto hidden w-full max-w-64 md:block xl:max-w-72" role="search" @submit.prevent="submitSearch">
             <label class="sr-only" for="site-search">Search the menu</label>
-            <input id="site-search" v-model="search" class="field rounded-full pr-12" type="search" placeholder="Search the menu" />
-            <button class="absolute top-1 right-1 grid size-10 place-items-center rounded-full bg-lilac text-white" aria-label="Search">
+            <input id="site-search" v-model="search" class="field rounded-lg pr-12" type="search" placeholder="Search the menu" />
+            <button class="absolute top-1 right-1 grid size-10 place-items-center rounded-lg bg-lilac text-white" aria-label="Search">
               <Search :size="17" />
             </button>
           </form>
@@ -87,18 +87,18 @@ onBeforeUnmount(() => {
             <RouterLink class="icon-button hidden sm:grid" to="/sign-in" aria-label="Sign in"><UserRound :size="18" /></RouterLink>
             <RouterLink class="icon-button hidden xl:grid" to="/wishlist" aria-label="Saved items">
               <Heart :size="18" />
-              <span v-if="state.wishlist.length" class="absolute -top-1 -right-1 grid size-5 place-items-center rounded-full bg-lilac text-[10px] font-bold text-white">{{ state.wishlist.length }}</span>
+              <span v-if="state.wishlist.length" class="absolute -top-1 -right-1 grid size-5 place-items-center rounded-md bg-lilac text-[10px] font-bold text-white">{{ state.wishlist.length }}</span>
             </RouterLink>
-            <RouterLink class="hidden min-h-12 shrink-0 items-center gap-3 rounded-full bg-lilac py-2 pr-5 pl-3 font-semibold text-white hover:-translate-y-0.5 hover:bg-lilac-dark xl:inline-flex" to="/cart" aria-label="View cart">
-              <span class="relative grid size-8 place-items-center rounded-full bg-white/14">
+            <RouterLink class="hidden min-h-12 shrink-0 items-center gap-3 rounded-lg bg-lilac py-2 pr-5 pl-3 font-semibold text-white hover:-translate-y-0.5 hover:bg-lilac-dark xl:inline-flex" to="/cart" aria-label="View cart">
+              <span class="relative grid size-8 place-items-center rounded-md bg-white/14">
                 <ShoppingBag :size="17" />
-                <span v-if="cartCount" class="absolute -top-2 -right-2 grid size-5 place-items-center rounded-full bg-white text-[10px] font-bold text-lilac">{{ cartCount }}</span>
+                <span v-if="cartCount" class="absolute -top-2 -right-2 grid size-5 place-items-center rounded-md bg-white text-[10px] font-bold text-lilac">{{ cartCount }}</span>
               </span>
               <span><small class="block text-[10px] leading-none font-medium text-white/60">Your order</small>View cart</span>
             </RouterLink>
-            <button class="icon-button xl:hidden" type="button" aria-label="Open cart" @click="state.cartOpen = true">
+            <button class="icon-button rounded-lg! xl:hidden" type="button" aria-label="Open cart" @click="state.cartOpen = true">
               <ShoppingBag :size="18" />
-              <span v-if="cartCount" class="absolute -top-1 -right-1 grid size-5 place-items-center rounded-full bg-lilac text-[10px] font-bold text-white">{{ cartCount }}</span>
+              <span v-if="cartCount" class="absolute -top-1 -right-1 grid size-5 place-items-center rounded-md bg-lilac text-[10px] font-bold text-white">{{ cartCount }}</span>
             </button>
           </div>
         </div>
@@ -118,8 +118,8 @@ onBeforeUnmount(() => {
           <div class="flex flex-1 flex-col p-5">
             <form class="relative" role="search" @submit.prevent="submitSearch">
               <label class="sr-only" for="mobile-site-search">Search the menu</label>
-              <input id="mobile-site-search" v-model="search" class="field rounded-full pr-12" type="search" placeholder="Search the menu" />
-              <button class="absolute top-1 right-1 grid size-10 place-items-center rounded-full bg-lilac text-white" aria-label="Search"><Search :size="17" /></button>
+              <input id="mobile-site-search" v-model="search" class="field rounded-lg pr-12" type="search" placeholder="Search the menu" />
+              <button class="absolute top-1 right-1 grid size-10 place-items-center rounded-lg bg-lilac text-white" aria-label="Search"><Search :size="17" /></button>
             </form>
 
             <p class="mt-7 px-3 text-[11px] font-bold tracking-[.16em] text-muted uppercase">Explore</p>
@@ -152,12 +152,12 @@ onBeforeUnmount(() => {
 
     <footer class="relative bg-[#1e181d] pt-12 text-white">
       <div class="page-shell relative z-10">
-        <div class="overflow-hidden rounded-[28px] bg-lilac shadow-[0_24px_70px_rgba(48,16,44,.3)]">
+        <div class="overflow-hidden rounded-xl bg-lilac shadow-[0_24px_70px_rgba(48,16,44,.3)]">
           <div class="grid items-center gap-7 px-6 py-8 sm:px-9 lg:grid-cols-[1fr_auto] lg:px-12 lg:py-10">
             <div><p class="text-xs font-bold tracking-[.18em] text-white/60 uppercase">Dining at Lilac</p><h2 class="mt-2 text-3xl font-semibold tracking-[-.035em] sm:text-4xl">Ready whenever you are.</h2><p class="mt-2 text-white/65">Explore the full menu or speak with our dining team.</p></div>
             <div class="flex flex-wrap gap-3">
-              <RouterLink class="inline-flex min-h-12 items-center gap-2 rounded-full bg-white px-6 font-semibold text-lilac hover:-translate-y-0.5 hover:bg-lilac-soft" to="/product">View dining menu <ArrowRight :size="17" /></RouterLink>
-              <a class="inline-flex min-h-12 items-center gap-2 rounded-full border border-white/20 px-5 font-semibold text-white hover:bg-white/10" href="tel:08065551244"><Phone :size="17" /> Call dining</a>
+              <RouterLink class="inline-flex min-h-12 items-center gap-2 rounded-lg bg-white px-6 font-semibold text-lilac hover:-translate-y-0.5 hover:bg-lilac-soft" to="/product">View dining menu <ArrowRight :size="17" /></RouterLink>
+              <a class="inline-flex min-h-12 items-center gap-2 rounded-lg border border-white/20 px-5 font-semibold text-white hover:bg-white/10" href="tel:08065551244"><Phone :size="17" /> Call dining</a>
             </div>
           </div>
         </div>
@@ -204,7 +204,7 @@ onBeforeUnmount(() => {
       <div class="border-t border-white/8">
         <div class="page-shell flex flex-col gap-3 py-5 text-xs text-white/35 sm:flex-row sm:items-center sm:justify-between">
           <span>© {{ new Date().getFullYear() }} Lilac Hotels. All rights reserved.</span>
-          <div class="flex gap-5"><a class="hover:text-white" href="https://lilachotels.com/privacy/" target="_blank" rel="noreferrer">Privacy</a><RouterLink class="hover:text-white" to="/contact">Guest support</RouterLink></div>
+          <div class="flex gap-5"><a class="hover:text-white" href="https://lilachotels.com/privacy/" target="_blank" rel="noreferrer">Privacy</a><RouterLink class="hover:text-white" to="/contact">Contacts</RouterLink></div>
         </div>
       </div>
     </footer>
