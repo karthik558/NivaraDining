@@ -203,9 +203,9 @@ onBeforeUnmount(() => {
         </div>
 
         <div class="lg:col-span-2">
-          <h2 class="text-sm font-semibold tracking-wide">Nivara stays</h2>
+          <h2 class="text-sm font-semibold tracking-wide">Hospitality</h2>
           <div class="mt-5 grid gap-3.5 text-sm text-white/50">
-            <span>Nivara Palace, Udaipur</span><span>Nivara Haveli, Jaipur</span><span>Nivara Dunes, Jaisalmer</span><span>Nivara Fort, Jodhpur</span>
+            <span>In-Room Dining</span><span>Suite Services</span><span>Fine Dining</span><span>Guest Concierge</span>
           </div>
         </div>
 
