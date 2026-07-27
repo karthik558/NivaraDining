@@ -138,8 +138,8 @@ const placeOrder = async () => {
 </script>
 
 <template>
-  <section class="relative overflow-hidden bg-[#211a20] py-14 text-white lg:py-20">
-    <div class="absolute inset-0 bg-[radial-gradient(circle_at_15%_10%,rgba(120,38,113,.75),transparent_40%)]"></div>
+  <section class="relative overflow-hidden bg-[#142420] py-14 text-white lg:py-20">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_15%_10%,rgba(18,78,63,.75),transparent_40%)]"></div>
     <div class="page-shell relative">
       <div class="flex items-center gap-3"><span class="h-px w-9 bg-white/35"></span><p class="text-xs font-bold tracking-[.22em] text-white/60 uppercase">Final Checkout</p></div>
       <h1 class="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl font-serif">Guest Details &amp; Invoice</h1>
@@ -153,7 +153,7 @@ const placeOrder = async () => {
 
       <form v-else ref="formRef" class="grid items-start gap-7 lg:grid-cols-[1fr_420px]" @submit.prevent="placeOrder">
         <div class="surface overflow-hidden">
-          <div class="border-b border-line bg-[#241d23] p-6 text-white sm:p-8">
+          <div class="border-b border-line bg-[#1b302a] p-6 text-white sm:p-8">
             <div class="flex items-center gap-3"><span class="grid size-11 place-items-center rounded-full bg-white/10"><ShieldCheck :size="21" /></span><div><p class="text-xs font-bold tracking-[.14em] text-white/55 uppercase">Private guest information</p><h2 class="mt-1 text-2xl font-semibold">Where should we deliver?</h2></div></div>
           </div>
           <div class="p-5 sm:p-8">

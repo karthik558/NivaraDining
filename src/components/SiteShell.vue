@@ -166,7 +166,7 @@ onBeforeUnmount(() => {
       <RouterView />
     </main>
 
-    <footer class="relative bg-[#1e181d] pt-12 text-white">
+    <footer class="relative bg-[#142420] pt-12 text-white">
       <div class="page-shell relative z-10">
         <div class="overflow-hidden rounded-xl bg-lilac shadow-[0_24px_70px_rgba(48,16,44,.3)]">
           <div class="grid items-center gap-7 px-6 py-8 sm:px-9 lg:grid-cols-[1fr_auto] lg:px-12 lg:py-10">

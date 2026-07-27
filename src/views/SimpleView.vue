@@ -44,10 +44,10 @@ const signIn = () => {
   </template>
 
   <template v-else-if="page === 'contact'">
-    <section class="relative min-h-162.5 overflow-hidden bg-[#211a20] text-white lg:min-h-180">
+    <section class="relative min-h-162.5 overflow-hidden bg-[#142420] text-white lg:min-h-180">
       <img class="absolute inset-0 h-full w-full object-cover object-center lg:object-right" src="/assets/img/product/ai/ai-product-23.jpg" alt="Nivara Hotels guest assistance" />
-      <div class="absolute inset-0 bg-linear-to-r from-[#211a20] via-[#211a20]/90 to-[#211a20]/18"></div>
-      <div class="absolute inset-0 bg-[radial-gradient(circle_at_15%_10%,rgba(120,38,113,.7),transparent_38%)]"></div>
+      <div class="absolute inset-0 bg-linear-to-r from-[#142420] via-[#142420]/90 to-[#142420]/18"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_15%_10%,rgba(18,78,63,.7),transparent_38%)]"></div>
       <div class="page-shell relative flex min-h-162.5 items-center py-16 lg:min-h-180">
         <div class="max-w-3xl">
           <div class="flex items-center gap-3"><span class="h-px w-9 bg-white/35"></span><p class="text-xs font-bold tracking-[.22em] text-white/60 uppercase">Guest assistance</p></div>
@@ -163,8 +163,8 @@ const signIn = () => {
 
   <!-- Policy Sticky Sub-Navigation Bar for legal pages -->
   <template v-if="['privacy-policy', 'cookies-policy', 'refund-policy', 'terms'].includes(page)">
-    <section class="relative overflow-hidden bg-[#211a20] py-14 text-white lg:py-20">
-      <div class="absolute inset-0 bg-[radial-gradient(circle_at_15%_10%,rgba(120,38,113,.75),transparent_40%)]"></div>
+    <section class="relative overflow-hidden bg-[#142420] py-14 text-white lg:py-20">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_15%_10%,rgba(18,78,63,.75),transparent_40%)]"></div>
       <div class="page-shell relative">
         <div class="flex items-center gap-3"><span class="h-px w-9 bg-white/35"></span><p class="text-xs font-bold tracking-[.22em] text-white/60 uppercase">Legal & Compliance</p></div>
         <h1 v-if="page === 'privacy-policy'" class="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl font-serif">Privacy Policy</h1>

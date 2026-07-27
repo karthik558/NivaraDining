@@ -294,7 +294,7 @@ onBeforeUnmount(() => window.clearInterval(heroTimer))
   <section class="section-space bg-canvas">
     <div class="page-shell">
       <div class="overflow-hidden rounded-xl border border-line bg-white shadow-card lg:grid lg:grid-cols-[.78fr_1.22fr]">
-        <div class="relative min-h-97.5 overflow-hidden bg-[#211a20] p-7 text-white sm:p-10 lg:min-h-140 lg:p-12">
+        <div class="relative min-h-97.5 overflow-hidden bg-[#142420] p-7 text-white sm:p-10 lg:min-h-140 lg:p-12">
           <div class="absolute -top-20 -right-20 size-72 rounded-full border border-white/8"></div>
           <div class="absolute right-10 bottom-10 size-44 overflow-hidden rounded-full border-8 border-white/8">
             <img class="h-full w-full object-cover" src="/assets/img/product/ai/ai-product-38.jpg" alt="Lilac dining experience" />
@@ -332,10 +332,10 @@ onBeforeUnmount(() => window.clearInterval(heroTimer))
     </div>
   </section>
 
-  <section class="relative flex min-h-130 items-center overflow-hidden bg-[#211a20] text-white lg:h-147.5 lg:min-h-0">
+  <section class="relative flex min-h-130 items-center overflow-hidden bg-[#142420] text-white lg:h-147.5 lg:min-h-0">
     <img class="absolute inset-0 h-full w-full object-cover" src="/assets/img/product/ai/ai-product-26.jpg" alt="Paneer butter masala prepared by Nivara Hotels" />
-    <div class="absolute inset-0 bg-linear-to-r from-[#211a20] via-[#211a20]/85 to-[#211a20]/12"></div>
-    <div class="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(120,38,113,.7),transparent_35%)]"></div>
+    <div class="absolute inset-0 bg-linear-to-r from-[#142420] via-[#142420]/85 to-[#142420]/12"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(18,78,63,.7),transparent_35%)]"></div>
     <div class="page-shell relative py-12">
       <div class="max-w-3xl">
         <span class="inline-flex size-14 items-center justify-center rounded-full border border-white/18 bg-white/8 backdrop-blur"><UtensilsCrossed :size="24" /></span>

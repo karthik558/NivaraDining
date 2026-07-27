@@ -203,16 +203,16 @@ const deleteRow = (item) => {
           <RouterLink to="/admin/products" class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-lilac">Open menu catalogue <ArrowUpRight :size="16" /></RouterLink>
         </section>
 
-        <section class="overflow-hidden rounded-lg bg-[#241d23] text-white">
+        <section class="overflow-hidden rounded-lg bg-[#1b302a] text-white">
           <div class="border-b border-white/10 p-5 sm:p-6">
             <div class="flex items-center justify-between"><div><p class="text-xs font-bold tracking-[.16em] text-white/45 uppercase">Service status</p><h2 class="mt-2 text-2xl font-semibold">Dining is available</h2></div><span class="flex items-center gap-2 rounded-lg bg-green-400/12 px-3 py-2 text-xs font-semibold text-green-300"><span class="size-2 rounded-full bg-green-300"></span>Live</span></div>
             <p class="mt-3 text-sm leading-6 text-white/55">Guest ordering is available daily from 7:30 AM until 10:30 PM.</p>
           </div>
           <div class="grid gap-px bg-white/8 min-[430px]:grid-cols-2">
-            <div class="bg-[#241d23] p-5"><Clock3 class="text-white/45" :size="18" /><strong class="mt-4 block">15 service hours</strong><small class="mt-1 block text-white/40">Daily availability</small></div>
-            <div class="bg-[#241d23] p-5"><BadgeIndianRupee class="text-white/45" :size="18" /><strong class="mt-4 block">₹{{ priceFloor }}–₹{{ priceCeiling }}</strong><small class="mt-1 block text-white/40">Current menu range</small></div>
-            <div class="bg-[#241d23] p-5"><FileText class="text-white/45" :size="18" /><strong class="mt-4 block">PDF invoices</strong><small class="mt-1 block text-white/40">Generated at checkout</small></div>
-            <div class="bg-[#241d23] p-5"><CheckCircle2 class="text-white/45" :size="18" /><strong class="mt-4 block">18% GST</strong><small class="mt-1 block text-white/40">Applied after discounts</small></div>
+            <div class="bg-[#1b302a] p-5"><Clock3 class="text-white/45" :size="18" /><strong class="mt-4 block">15 service hours</strong><small class="mt-1 block text-white/40">Daily availability</small></div>
+            <div class="bg-[#1b302a] p-5"><BadgeIndianRupee class="text-white/45" :size="18" /><strong class="mt-4 block">₹{{ priceFloor }}–₹{{ priceCeiling }}</strong><small class="mt-1 block text-white/40">Current menu range</small></div>
+            <div class="bg-[#1b302a] p-5"><FileText class="text-white/45" :size="18" /><strong class="mt-4 block">PDF invoices</strong><small class="mt-1 block text-white/40">Generated at checkout</small></div>
+            <div class="bg-[#1b302a] p-5"><CheckCircle2 class="text-white/45" :size="18" /><strong class="mt-4 block">18% GST</strong><small class="mt-1 block text-white/40">Applied after discounts</small></div>
           </div>
         </section>
       </div>

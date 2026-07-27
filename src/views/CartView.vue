@@ -28,8 +28,8 @@ const clearCoupon = () => {
 </script>
 
 <template>
-  <section class="relative overflow-hidden bg-[#211a20] py-14 text-white lg:py-20">
-    <div class="absolute inset-0 bg-[radial-gradient(circle_at_15%_10%,rgba(120,38,113,.75),transparent_40%)]"></div>
+  <section class="relative overflow-hidden bg-[#142420] py-14 text-white lg:py-20">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_15%_10%,rgba(18,78,63,.75),transparent_40%)]"></div>
     <div class="page-shell relative">
       <div class="flex items-center gap-3"><span class="h-px w-9 bg-white/35"></span><p class="text-xs font-bold tracking-[.22em] text-white/60 uppercase">Review your selection</p></div>
       <h1 class="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl font-serif">Your Order Cart</h1>
@@ -84,7 +84,7 @@ const clearCoupon = () => {
         </div>
 
         <aside class="surface h-fit overflow-hidden lg:sticky lg:top-5">
-          <div class="border-b border-line bg-[#241d23] p-6 text-white">
+          <div class="border-b border-line bg-[#1b302a] p-6 text-white">
             <p class="text-xs font-bold tracking-[.16em] text-white/55 uppercase">Complete total</p>
             <h2 class="mt-2 text-2xl font-semibold">Order summary</h2>
           </div>

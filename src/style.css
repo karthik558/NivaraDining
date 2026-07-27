@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 @theme {
-  --color-lilac: #782671;
-  --color-lilac-dark: #5f1d59;
-  --color-lilac-soft: #f4eaf3;
+  --color-lilac: #124e3f;
+  --color-lilac-dark: #0d3a2f;
+  --color-lilac-soft: #e8f4f0;
   --color-ink: #211d20;
   --color-muted: #716b70;
   --color-line: #e9e3e7;
@@ -168,7 +168,7 @@
   color: #fff;
   background:
     radial-gradient(circle at 50% 42%, rgba(255, 255, 255, 0.12), transparent 30%),
-    #782671;
+    #124e3f;
 }
 
 .site-preloader__mark {
@@ -283,7 +283,7 @@
   background: linear-gradient(
     to right,
     #e9e3e7 0 var(--range-start),
-    #782671 var(--range-start) var(--range-end),
+    #124e3f var(--range-start) var(--range-end),
     #e9e3e7 var(--range-end) 100%
   );
 }
@@ -305,7 +305,7 @@
   pointer-events: auto;
   cursor: grab;
   background: #fff;
-  border: 3px solid #782671;
+  border: 3px solid #124e3f;
   border-radius: 50%;
   box-shadow: 0 2px 8px rgba(41, 26, 38, 0.18);
 }
@@ -316,7 +316,7 @@
   pointer-events: auto;
   cursor: grab;
   background: #fff;
-  border: 3px solid #782671;
+  border: 3px solid #124e3f;
   border-radius: 50%;
   box-shadow: 0 2px 8px rgba(41, 26, 38, 0.18);
 }

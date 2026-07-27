@@ -48,7 +48,7 @@ const logout = () => {
     <div class="flex">
       <Transition name="fade">
         <div v-if="open" class="fixed inset-0 z-50 bg-ink/45 backdrop-blur-sm lg:hidden" @click.self="open = false">
-          <aside class="flex h-full w-[88%] max-w-82 flex-col bg-[#201a1f] p-4 text-white">
+          <aside class="flex h-full w-[88%] max-w-82 flex-col bg-[#142420] p-4 text-white">
             <div class="flex items-center justify-between px-2 py-2">
               <div class="flex items-center gap-2">
                 <img src="/assets/img/logo/logo-white.png" alt="Nivara Admin" class="h-10 w-auto object-contain shrink-0" />
@@ -66,7 +66,7 @@ const logout = () => {
         </div>
       </Transition>
 
-      <aside class="sticky top-16 hidden h-[calc(100vh-64px)] w-72 shrink-0 border-r border-white/5 bg-[#201a1f] p-4 text-white lg:flex lg:flex-col">
+      <aside class="sticky top-16 hidden h-[calc(100vh-64px)] w-72 shrink-0 border-r border-white/5 bg-[#142420] p-4 text-white lg:flex lg:flex-col">
         <p class="px-3 pt-2 pb-3 text-[10px] font-bold tracking-[.18em] text-white/35 uppercase">Workspace</p>
         <nav class="grid gap-1.5">
           <RouterLink v-for="link in links" :key="link.to" :to="link.to" class="admin-nav-link" :class="{ 'admin-nav-link--active': route.path === link.to }">
