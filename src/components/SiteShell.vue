@@ -1,9 +1,9 @@
 <script setup>
-import { onBeforeUnmount, ref, watch } from 'vue'
+import { onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import {
   Menu, Search, ShoppingBag, Heart, UserRound, X, Minus, Plus,
-  Phone, Clock3, ArrowRight, Mail, ChevronRight, Trash2,
+  Phone, Clock3, ArrowRight, ArrowUp, ChefHat, Mail, ChevronRight, Trash2,
 } from '@lucide/vue'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faFacebookF, faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
@@ -15,6 +15,7 @@ import {
 const router = useRouter()
 const mobileOpen = ref(false)
 const search = ref('')
+const showBackToTop = ref(false)
 
 const submitSearch = () => {
   state.search = search.value.trim()
@@ -30,6 +31,14 @@ const handleEscape = (event) => {
   if (event.key === 'Escape') closeMobileNav()
 }
 
+const updateBackToTop = () => {
+  showBackToTop.value = window.scrollY > 520
+}
+
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' })
+}
+
 watch(mobileOpen, (isOpen) => {
   document.body.classList.toggle('nav-open', isOpen)
   if (isOpen) document.addEventListener('keydown', handleEscape)
@@ -38,9 +47,15 @@ watch(mobileOpen, (isOpen) => {
 
 const removeRouteGuard = router.afterEach(closeMobileNav)
 
+onMounted(() => {
+  updateBackToTop()
+  window.addEventListener('scroll', updateBackToTop, { passive: true })
+})
+
 onBeforeUnmount(() => {
   document.body.classList.remove('nav-open')
   document.removeEventListener('keydown', handleEscape)
+  window.removeEventListener('scroll', updateBackToTop)
   removeRouteGuard()
 })
 </script>
@@ -252,6 +267,22 @@ onBeforeUnmount(() => {
 
     <Transition name="fade">
       <div v-if="state.toast" class="fixed right-4 bottom-5 z-60 max-w-sm rounded-xl bg-ink px-5 py-3 text-sm font-medium text-white shadow-xl sm:right-6">{{ state.toast }}</div>
+    </Transition>
+
+    <Transition name="back-to-top">
+      <button
+        v-if="showBackToTop && !state.cartOpen && !mobileOpen"
+        class="group fixed right-4 bottom-5 z-40 grid size-12 place-items-center rounded-lg border border-white/15 bg-lilac text-white shadow-[0_12px_30px_rgba(72,20,66,.3)] hover:-translate-y-1 hover:bg-lilac-dark sm:right-6 sm:bottom-7 sm:size-14"
+        type="button"
+        aria-label="Back to top"
+        title="Back to top"
+        @click="scrollToTop"
+      >
+        <ChefHat :size="21" />
+        <span class="absolute -top-1.5 -right-1.5 grid size-5 place-items-center rounded-md border-2 border-canvas bg-white text-lilac">
+          <ArrowUp :size="11" :stroke-width="3" />
+        </span>
+      </button>
     </Transition>
   </div>
 </template>

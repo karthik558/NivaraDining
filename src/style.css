@@ -135,6 +135,15 @@
   .field {
     @apply min-h-12 w-full rounded-xl border border-line bg-white px-4 text-ink placeholder:text-muted/65;
   }
+
+  .scrollbar-hidden {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .fade-enter-active,
@@ -146,6 +155,89 @@
 .fade-leave-to {
   opacity: 0;
   transform: translateY(8px);
+}
+
+.site-preloader {
+  position: fixed;
+  z-index: 100;
+  display: grid;
+  inset: 0;
+  place-content: center;
+  justify-items: center;
+  color: #fff;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(255, 255, 255, 0.12), transparent 30%),
+    #782671;
+}
+
+.site-preloader__mark {
+  position: relative;
+  display: grid;
+  width: 84px;
+  height: 72px;
+  place-items: end center;
+}
+
+.site-preloader__steam {
+  position: absolute;
+  top: 0;
+  width: 2px;
+  height: 22px;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.8), transparent);
+  border-radius: 999px;
+  animation: preloader-steam 1.2s ease-in-out infinite;
+}
+
+.site-preloader__steam--one {
+  left: 27px;
+}
+
+.site-preloader__steam--two {
+  left: 41px;
+  animation-delay: 160ms;
+}
+
+.site-preloader__steam--three {
+  left: 55px;
+  animation-delay: 320ms;
+}
+
+.site-preloader__line {
+  width: 116px;
+  height: 3px;
+  margin-top: 18px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+}
+
+.site-preloader__line i {
+  display: block;
+  width: 42%;
+  height: 100%;
+  background: #fff;
+  border-radius: inherit;
+  animation: preloader-line 1s ease-in-out infinite;
+}
+
+.preloader-leave-active {
+  transition: opacity 320ms ease, visibility 320ms ease;
+}
+
+.preloader-leave-to {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.back-to-top-enter-active,
+.back-to-top-leave-active {
+  transition: opacity 180ms ease, transform 220ms cubic-bezier(.22, 1, .36, 1);
+}
+
+.back-to-top-enter-from,
+.back-to-top-leave-to {
+  opacity: 0;
+  transform: translateY(12px) scale(0.9);
 }
 
 .mobile-nav-enter-active,
@@ -396,6 +488,23 @@
 @keyframes gentle-float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-8px); }
+}
+
+@keyframes preloader-steam {
+  0%, 100% {
+    opacity: 0.2;
+    transform: translateY(8px) scaleY(0.7);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-3px) scaleY(1);
+  }
+}
+
+@keyframes preloader-line {
+  0% { transform: translateX(-105%); }
+  50% { transform: translateX(90%); }
+  100% { transform: translateX(245%); }
 }
 
 @media (prefers-reduced-motion: reduce) {

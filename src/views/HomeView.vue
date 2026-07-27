@@ -196,7 +196,7 @@ onBeforeUnmount(() => window.clearInterval(heroTimer))
         <RouterLink class="inline-flex items-center gap-2 font-semibold text-lilac" to="/product">See the full menu <ArrowRight :size="17" /></RouterLink>
       </div>
 
-      <div class="mt-8 flex gap-2 overflow-x-auto pb-3">
+      <div class="scrollbar-hidden mt-8 flex gap-2 overflow-x-auto pb-3">
         <button
           v-for="category in categoryTabs"
           :key="category.label"
