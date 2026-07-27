@@ -1,5 +1,7 @@
 # Nivara Hotels & Stays — In-Room Dining Platform
 
+![Nivara Hotels & Stays Preview](public/assets/img/nivara_device_mockup.jpg)
+
 A luxury, high-performance in-room dining and guest concierge web application built for **Nivara Hotels & Stays**. Crafted with modern web technologies, responsive layouts, and an elegant hospitality design system.
 
 ---
