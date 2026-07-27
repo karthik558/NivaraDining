@@ -1,101 +1,100 @@
 [
-    {
-        "id": 1,
-        "icon": "/assets/img/svg/testi02.svg",
-        "text": "“Very near luxurious stay with stunning views. Clean and neat. Well maintained rooms. Morning royal breakfast dishes are available in the buffet. Pure vegetarian fine dining is available. Well maintained atmosphere around the palace hotel. Evening dinner is also so good.“",
-        "name": "Karthik Pandian G",
-        "title": "Nivara Palace, Udaipur"
-    },
-    {
-        "id": 2,
-        "icon": "/assets/img/svg/testi02.svg",
-        "text": "“We had a fantastic stay at Nivara! From the immaculate rooms to the outstanding hospitality, everything was top-notch. The highlight was the incredible royal thali—absolutely delicious! Special thanks to Vyshakh for going above and beyond to make our stay memorable. Highly recommend this place!“",
-        "name": "Jinosh KM",
-        "title": "Nivara Haveli, Jaipur"
-    },
-    {
-        "id": 3,
-        "icon": "/assets/img/svg/testi02.svg",
-        "text": "“Good hotel good food super lunch and it's a five star experience. Very near and serene location in Udaipur. Very good restaurant serving veg food and lots of good choices running full time. This is from the family of Nivara group of hotels”",
-        "name": "Sindhu Rajesh",
-        "title": "Nivara Palace, Udaipur"
-    },
-    {
-        "id": 4,
-        "icon": "/assets/img/svg/testi02.svg",
-        "text": "“We had our lunch from Kesar Restaurant inside Nivara Haveli. The royal thali lunch was too good. The restaurant is clean and the staff were good as well.”",
-        "avatar": "/assets/img/testimonial/testi-avata-04.png",
-        "name": "Hari Krishnan",
-        "title": "Nivara Haveli, Jaipur"
-    },
-    {
-        "id": 5,
-        "icon": "/assets/img/svg/testi02.svg",
-        "text": "“Nivara Fort is a superb property located conveniently with desert fort views. The rooms were large, clean, and very well-maintained, and the bathrooms were equally spotless. The white linens added to the pristine ambiance, making the stay very comfortable.”",
-        "name": "Sasikiran",
-        "title": "Nivara Fort, Jodhpur"
-    },
-    {
-        "id": 6,
-        "icon": "/assets/img/svg/testi02.svg",
-        "text": "“An excellent hotel.. I would say the best in Jaisalmer.. Well appointed rooms catering to different guests.. Has all amenities required for a luxury desert stay..”",
-        "name": "Dinesh L",
-        "title": "Nivara Dunes, Jaisalmer"
-    },
-    {
-        "id": 7,
-        "icon": "/assets/img/svg/testi02.svg",
-        "text": "“The in-room dining arrived warm, beautifully presented, and exactly when promised. The filter coffee and breakfast made our morning feel effortless.”",
-        "name": "Meera Nair",
-        "title": "In-room dining guest"
-    },
-    {
-        "id": 8,
-        "icon": "/assets/img/svg/testi02.svg",
-        "text": "“A thoughtfully curated vegetarian menu with enough choice for our whole family. The paneer tikka and biryani were particular favourites.”",
-        "name": "Rahul Menon",
-        "title": "Family stay"
-    },
-    {
-        "id": 9,
-        "icon": "/assets/img/svg/testi02.svg",
-        "text": "“Ordering was simple and the team was very attentive to our dietary preferences. Everything felt polished, personal, and genuinely hospitable.”",
-        "name": "Ananya Rao",
-        "title": "Weekend guest"
-    },
-    {
-        "id": 10,
-        "icon": "/assets/img/svg/testi02.svg",
-        "text": "“The South Indian thali was comforting and generous without feeling heavy. A lovely meal after a long day of travel.”",
-        "name": "Vikram Iyer",
-        "title": "Business traveller"
-    },
-    {
-        "id": 11,
-        "icon": "/assets/img/svg/testi02.svg",
-        "text": "“We appreciated the fresh ingredients, clear menu, and careful packaging. The food felt restaurant-quality even in the room.”",
-        "name": "Priya Krishnan",
-        "title": "Nivara guest"
-    },
-    {
-        "id": 12,
-        "icon": "/assets/img/svg/testi02.svg",
-        "text": "“From the first call to the final delivery, the service was warm and professional. The team made a late family dinner completely stress-free.”",
-        "name": "Arjun S.",
-        "title": "Family stay"
-    },
-    {
-        "id": 13,
-        "icon": "/assets/img/svg/testi02.svg",
-        "text": "“The menu balances familiar comfort food with lighter choices really well. Our salad, pasta, and dessert were all excellent.”",
-        "name": "Neha Thomas",
-        "title": "Leisure guest"
-    },
-    {
-        "id": 14,
-        "icon": "/assets/img/svg/testi02.svg",
-        "text": "“Breakfast arrived right on time and the appam with vegetable stew was memorable. Exactly the calm start we wanted.”",
-        "name": "Sanjay Pillai",
-        "title": "Morning dining guest"
-    }
+  {
+    "id": 1,
+    "icon": "/assets/img/svg/testi02.svg",
+    "text": "“An exquisite in-room dining experience. The presentation was impeccable, delivered hot to our suite right on schedule. The regional delicacies and breakfast tray made our morning feel truly royal.”",
+    "name": "Alexander Wright",
+    "title": "Suite Guest"
+  },
+  {
+    "id": 2,
+    "icon": "/assets/img/svg/testi02.svg",
+    "text": "“Immaculate service from start to finish. The royal thali was rich in flavor and authenticity. The room service staff went above and beyond to accommodate our dietary preferences seamlessly.”",
+    "name": "Elena Rostova",
+    "title": "Leisure Guest"
+  },
+  {
+    "id": 3,
+    "icon": "/assets/img/svg/testi02.svg",
+    "text": "“Five-star dining right in the comfort of our room. The menu choices are extensive, perfectly balanced, and prepared with exceptional culinary care. A highlight of our stay.”",
+    "name": "Marcus Vance",
+    "title": "Executive Traveler"
+  },
+  {
+    "id": 4,
+    "icon": "/assets/img/svg/testi02.svg",
+    "text": "“The lunch platter was cooked to perfection and served with incredible warmth. Having fine dining delivered directly to your room elevates the entire resort experience.”",
+    "name": "Sophia Chen",
+    "title": "Deluxe Suite Guest"
+  },
+  {
+    "id": 5,
+    "icon": "/assets/img/svg/testi02.svg",
+    "text": "“Superb in-room service and pristine presentation. The dishes arrived steaming hot with white linen care. It made our quiet evening in the suite unforgettable.”",
+    "name": "David Miller",
+    "title": "Sanctuary Guest"
+  },
+  {
+    "id": 6,
+    "icon": "/assets/img/svg/testi02.svg",
+    "text": "“The finest in-room dining experience we have enjoyed. Thoughtfully packaged, incredibly fresh, and delivered with genuine hospitality. Highly recommended.”",
+    "name": "Charlotte Sterling",
+    "title": "Weekend Guest"
+  },
+  {
+    "id": 7,
+    "icon": "/assets/img/svg/testi02.svg",
+    "text": "“The in-room dining arrived warm, beautifully presented, and exactly when promised. The artisanal coffee and breakfast made our morning feel effortless.”",
+    "name": "Claire Montgomery",
+    "title": "Morning Dining Guest"
+  },
+  {
+    "id": 8,
+    "icon": "/assets/img/svg/testi02.svg",
+    "text": "“A thoughtfully curated menu with wonderful choices for our family. The paneer tikka, aromatic rice, and breads were particular favorites.”",
+    "name": "Lucas Thorne",
+    "title": "Family Stay"
+  },
+  {
+    "id": 9,
+    "icon": "/assets/img/svg/testi02.svg",
+    "text": "“Ordering was simple and the team was very attentive to our dietary preferences. Everything felt polished, personal, and genuinely hospitable.”",
+    "name": "Isabella Rossi",
+    "title": "Culinary Guest"
+  },
+  {
+    "id": 10,
+    "icon": "/assets/img/svg/testi02.svg",
+    "text": "“The traditional thali was comforting and generous without feeling heavy. A lovely meal after a long day of travel.”",
+    "name": "Julian Sterling",
+    "title": "Business Traveler"
+  },
+  {
+    "id": 11,
+    "icon": "/assets/img/svg/testi02.svg",
+    "text": "“We appreciated the fresh ingredients, clear menu, and careful packaging. The food felt fine-restaurant quality right inside our suite.”",
+    "name": "Amara Vance",
+    "title": "Suite Guest"
+  },
+  {
+    "id": 12,
+    "icon": "/assets/img/svg/testi02.svg",
+    "text": "“From the first call to the final delivery, the service was warm and professional. The concierge team made a late family dinner completely stress-free.”",
+    "name": "Ethan Reynolds",
+    "title": "Family Stay"
+  },
+  {
+    "id": 13,
+    "icon": "/assets/img/svg/testi02.svg",
+    "text": "“The menu balances familiar comfort food with lighter choices really well. Our fresh salad, main dish, and dessert were all top tier.”",
+    "name": "Hannah Brooks",
+    "title": "Leisure Guest"
+  },
+  {
+    "id": 14,
+    "icon": "/assets/img/svg/testi02.svg",
+    "text": "“Breakfast arrived right on time and the signature stew with warm appam was memorable. Exactly the calm, serene start we wanted.”",
+    "name": "Oliver Bennett",
+    "title": "Resort Traveler"
+  }
 ]
